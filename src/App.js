@@ -6,7 +6,7 @@ import './styled';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import MainPage from './page1/MainPage';
 import Footer from './Footer';
-
+import Create from './page2/Create';
 document.body.style = 'background: #ffc000;';
 
 function App() {
@@ -14,8 +14,9 @@ function App() {
 		<Router className="overallbg">
 			<div className="App">
 				<Route exact path="/" component={MainPage} />
+				<Route path="/create" component={Create} />
 				<Footer />
-			</div>{' '}
+			</div>
 			{/*Dont touch this div or anything beyond here */}
 		</Router>
 	);

@@ -3,16 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import './styled';
-import { NavLink } from 'react-router-dom';
 
-function Navbar1() {
+function Navbar2() {
 	return (
-		<div className="Navbar1">
+		<div className="Navbar2">
 			<section>
-				<nav className="navbarcustom navbar navbar-expand-sm navbar-light">
+				<nav className="navbarcustom2 navbar navbar-expand-sm navbar-light">
 					<a
 						href="index.html"
-						className="customlink1 font-weight-bold navbar-brand mr-5"
+						className="customlink4 font-weight-bold navbar-brand mr-5"
 					></a>
 
 					<button
@@ -27,51 +26,41 @@ function Navbar1() {
 						<ul className="mr-auto navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2">
-									<NavLink
-										className="customlink font-weight-bold nav-link mx-3"
-										whileHover={{ color: 'black' }}
-										exact
-										to="/create"
+									<a
+										href="create.html"
+										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
 									>
 										Create
-									</NavLink>
+									</a>
 								</li>
 								<li className="nav-item pl-2">
-									<NavLink
-										className="customlink font-weight-bold nav-link mx-3"
-										exact
-										to="/explore"
+									<a
+										href="explore.html"
+										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
 									>
 										Explore
-									</NavLink>
+									</a>
 								</li>
 								<li className="nav-item pl-2">
-									<NavLink
+									<a
 										href="account.html"
-										className="customlink font-weight-bold nav-link mx-3"
-										exact
-										to="Account"
+										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
 									>
 										Account
-									</NavLink>
+									</a>
 								</li>
 							</div>
 						</ul>
 						<ul className="navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2 mx-4 mt-1">
-									<a
-										className="customlink nav-link text-secondary"
-										style={{ fontWeight: 700 }}
-										exact
-										to="/"
-									>
+									<a href="" className="customlink nav-link text-secondary">
 										How to
 									</a>
 								</li>
 								<li className="nav-item pl-2 pr-3">
-									<a href="#" className="nav-link">
-										<button className="buttoncustom font-weight-bold">
+									<a href="" className="nav-link">
+										<button className="buttoncustom3 font-weight-bold">
 											Login
 										</button>
 									</a>
@@ -84,7 +73,7 @@ function Navbar1() {
 										<input
 											type="search"
 											placeholder="Search"
-											className="mr-sm-2 pl-3 mt-2 ml-3 search"
+											className="mr-sm-2 pl-3 mt-2 ml-3 search2"
 										/>
 									</form>
 								</li>
@@ -97,4 +86,4 @@ function Navbar1() {
 	);
 }
 
-export default Navbar1;
+export default Navbar2;
