@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Cover from '../images/CoverForManga.png';
 
 function Hero() {
 	return (
@@ -9,7 +10,7 @@ function Hero() {
 					<div className="container d-flex justify-content-center">
 						<div className="row">
 							<img
-								src="CoverForManga.png"
+								src={Cover}
 								className="img-fluid mx-auto images-hero"
 								alt="Example of Successful Manga"
 							/>

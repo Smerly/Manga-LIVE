@@ -5,10 +5,12 @@ body {
 	padding: 0px;
 	overflow-x: hidden;
 }
-body {
+
+.overallbg {
 	background-color: #ffc000;
 	font-family: Helvetica !important;
 }
+
 .navbarcustom {
 	background-color: #ffc000;
 }
@@ -106,7 +108,7 @@ a.customlink2:hover {
 }
 
 a.customlink1 {
-	background-image: url(Manga-LIVE.png);
+	background-image: url(./images/Manga-LIVE.png);
 	width: 392.805px;
 	height: 62.2692px;
 	object-fit: cover;
@@ -114,7 +116,7 @@ a.customlink1 {
 }
 
 a.customlink4 {
-	background-image: url(Manga-LIVE2.png);
+	background-image: url(./images/Manga-LIVE2.png);
 	width: 392.805px;
 	height: 62.2692px;
 	object-fit: cover;
@@ -129,7 +131,7 @@ a.customlink4 {
 	background-color: white;
 	margin-left: -10px;
 	margin-right: -10px;
-	background: url(Herobg.png) no-repeat 50% 0;
+	background: url(./images/Herobg.png) no-repeat 50% 0;
 	background-size: cover;
 	object-fit: contain;
 	min-height: 916px;
