@@ -4,7 +4,7 @@ import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import './styled';
 import { NavLink } from 'react-router-dom';
-
+import Login2 from './Login2';
 function Navbar2() {
 	return (
 		<div className="Navbar2">
@@ -60,16 +60,21 @@ function Navbar2() {
 						<ul className="navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2 mx-4 mt-1">
-									<a href="#" className="customlink nav-link text-secondary">
+									<a
+										href="#"
+										className="customlink2 nav-link"
+										style={{ color: 'gray' }}
+									>
 										How to
 									</a>
 								</li>
 								<li className="nav-item pl-2 pr-3">
-									<a href="#" className="nav-link">
+									{/* <a href="#" className="nav-link">
 										<button className="buttoncustom3 font-weight-bold">
 											Login
 										</button>
-									</a>
+									</a> */}
+									<Login2 />
 								</li>
 
 								<div className="separation-line mt-3"></div>

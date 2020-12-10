@@ -4,7 +4,7 @@ import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import './styled';
 import { NavLink } from 'react-router-dom';
-
+import Login from './Login';
 function Navbar1() {
 	return (
 		<div className="Navbar1">
@@ -70,11 +70,13 @@ function Navbar1() {
 									</a>
 								</li>
 								<li className="nav-item pl-2 pr-3">
-									<a href="#" className="nav-link">
+									{/* <a href="#" className="nav-link">
 										<button className="buttoncustom font-weight-bold">
 											Login
 										</button>
-									</a>
+									</a> */}
+
+									<Login />
 								</li>
 
 								<div className="separation-line mt-3"></div>
