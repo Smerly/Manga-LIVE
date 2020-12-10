@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar2 from '../Navbar2';
-
+import '../App.css';
 function Create() {
 	return (
 		<div className="Create">
@@ -194,7 +194,7 @@ function Create() {
 										Male
 									</a>
 									<div className="col-sm m-2">
-										<h3 className="text-dark h1-text" style="font-size: 40px">
+										<h3 className="text-dark h1-text" style={{ fontSize: 40 }}>
 											or
 										</h3>
 									</div>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css';
 function MindofReader() {
 	return (
 		<div className="Hero">

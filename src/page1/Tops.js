@@ -1,5 +1,6 @@
 import React from 'react';
 import Cover from '../images/CoverForManga.png';
+import '../App.css';
 function Tops() {
 	return (
 		<div>

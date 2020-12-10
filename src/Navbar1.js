@@ -10,10 +10,10 @@ function Navbar1() {
 		<div className="Navbar1">
 			<section>
 				<nav className="navbarcustom navbar navbar-expand-sm navbar-light">
-					<a
-						href="index.html"
+					<NavLink
+						to={`/`}
 						className="customlink1 font-weight-bold navbar-brand mr-5"
-					></a>
+					></NavLink>
 
 					<button
 						className="navbar-toggler"
@@ -30,8 +30,7 @@ function Navbar1() {
 									<NavLink
 										className="customlink font-weight-bold nav-link mx-3"
 										whileHover={{ color: 'black' }}
-										exact
-										to="/create"
+										to={`create`}
 									>
 										Create
 									</NavLink>
@@ -40,7 +39,7 @@ function Navbar1() {
 									<NavLink
 										className="customlink font-weight-bold nav-link mx-3"
 										exact
-										to="/explore"
+										to={`/explore`}
 									>
 										Explore
 									</NavLink>
@@ -50,7 +49,7 @@ function Navbar1() {
 										href="account.html"
 										className="customlink font-weight-bold nav-link mx-3"
 										exact
-										to="Account"
+										to={`Account`}
 									>
 										Account
 									</NavLink>
@@ -61,10 +60,11 @@ function Navbar1() {
 							<div className="row">
 								<li className="nav-item pl-2 mx-4 mt-1">
 									<a
+										href="#"
 										className="customlink nav-link text-secondary"
 										style={{ fontWeight: 700 }}
 										exact
-										to="/"
+										to="#"
 									>
 										How to
 									</a>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Cover from '../images/CoverForManga.png';
+import '../App.css';
 
 function Hero() {
 	return (

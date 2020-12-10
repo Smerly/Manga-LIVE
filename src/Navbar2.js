@@ -3,16 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
 import styled from 'styled-components';
 import './styled';
+import { NavLink } from 'react-router-dom';
 
 function Navbar2() {
 	return (
 		<div className="Navbar2">
 			<section>
 				<nav className="navbarcustom2 navbar navbar-expand-sm navbar-light">
-					<a
-						href="index.html"
+					<NavLink
+						to={`/`}
 						className="customlink4 font-weight-bold navbar-brand mr-5"
-					></a>
+					></NavLink>
 
 					<button
 						className="navbar-toggler"
@@ -26,40 +27,45 @@ function Navbar2() {
 						<ul className="mr-auto navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2">
-									<a
-										href="create.html"
-										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
+									<NavLink
+										className="customlink2 font-weight-bold nav-link mx-3"
+										style={{ color: 'black' }}
+										to={`create`}
 									>
 										Create
-									</a>
+									</NavLink>
 								</li>
 								<li className="nav-item pl-2">
-									<a
-										href="explore.html"
-										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
+									<NavLink
+										className="customlink2 font-weight-bold nav-link mx-3"
+										exact
+										style={{ color: 'black' }}
+										to={`/explore`}
 									>
 										Explore
-									</a>
+									</NavLink>
 								</li>
 								<li className="nav-item pl-2">
-									<a
-										href="account.html"
-										className="customlink2 font-weight-bold nav-link mx-3 text-dark"
+									<NavLink
+										className="customlink2 font-weight-bold nav-link mx-3"
+										exact
+										style={{ color: 'black' }}
+										to={`account`}
 									>
 										Account
-									</a>
+									</NavLink>
 								</li>
 							</div>
 						</ul>
 						<ul className="navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2 mx-4 mt-1">
-									<a href="" className="customlink nav-link text-secondary">
+									<a href="#" className="customlink nav-link text-secondary">
 										How to
 									</a>
 								</li>
 								<li className="nav-item pl-2 pr-3">
-									<a href="" className="nav-link">
+									<a href="#" className="nav-link">
 										<button className="buttoncustom3 font-weight-bold">
 											Login
 										</button>

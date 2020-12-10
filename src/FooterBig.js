@@ -1,12 +1,13 @@
 import React from 'react';
 import Logo from './images/Manga-LIVE.png';
+import './App.css';
 
 const borderRadius = { borderRadius: '60px' };
 
-function Footer() {
+function FooterBig() {
 	return (
 		<section className="bg-gray">
-			<div className="container" style={{ backgroundColor: '#ffc000' }}>
+			<div style={{ backgroundColor: '#ffc000' }}>
 				<div className="footer-page">
 					<div className="d-flex justify-content-center p-5">
 						<a
@@ -43,7 +44,7 @@ function Footer() {
 				</div>
 			</div>
 
-			<div className="container" style={{ backgroundColor: '#e6e6e6' }}>
+			<div style={{ backgroundColor: '#e6e6e6' }}>
 				<div className="footer-page">
 					<div className="d-flex justify-content-center p-5">
 						<img src={Logo} style={{ width: '20%' }} />
@@ -51,7 +52,7 @@ function Footer() {
 				</div>
 			</div>
 
-			<div className="container" style={{ backgroundColor: '#e6e6e6' }}>
+			<div style={{ backgroundColor: '#e6e6e6' }}>
 				<div className="footer-page">
 					<div className="d-flex justify-content-center">
 						<header>© 2020 Copyright Ernest Cheung | Manga LIVE</header>
@@ -62,4 +63,4 @@ function Footer() {
 	);
 }
 
-export default Footer;
+export default FooterBig;
