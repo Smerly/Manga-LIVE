@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { render } from '@testing-library/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class Login2 extends Component {

@@ -234,3 +234,26 @@ a.customlink3:hover {
 	padding: 2px;
 	font-weight: 800;
 }
+
+.login-socialfb {
+	background: url(./images/facebook.png) no-repeat center right;
+	object-fit: cover;
+	width: 56px;
+	height: 56px;
+	background-size: cover;
+}
+
+.login-socialg {
+	background: url(./images/google.png) no-repeat center right;
+	object-fit: cover;
+	width: 56px;
+	height: 56px;
+	background-size: cover;
+}
+.login-sociall {
+	background: url(./images/line.png) no-repeat center right;
+	object-fit: cover;
+	width: 56px;
+	height: 56px;
+	background-size: cover;
+}
