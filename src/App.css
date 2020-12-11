@@ -257,3 +257,16 @@ a.customlink3:hover {
 	height: 56px;
 	background-size: cover;
 }
+
+.Carouselimga img {
+	margin: auto !important;
+}
+
+.Carouselcenter {
+	justify-content: center;
+}
+
+.Carouselnew {
+	width: 50%;
+	margin-left: 280px;
+}
