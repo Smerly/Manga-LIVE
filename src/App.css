@@ -270,3 +270,20 @@ a.customlink3:hover {
 	width: 50%;
 	margin-left: 280px;
 }
+
+.toggle {
+	position: absolute;
+	left: -99em;
+}
+
+.toggle:not(:checked) + a {
+	color: white;
+}
+
+.toggle:checked + a {
+	color: black;
+}
+
+.cursor {
+	cursor: pointer;
+}
