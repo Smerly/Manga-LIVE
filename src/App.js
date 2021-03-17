@@ -14,7 +14,7 @@ document.body.style = 'background: #ffc000;';
 
 function App() {
 	return (
-		<div class="App">
+		<div className="App">
 			<Router className="overallbg">
 				<Route exact path="/" component={MainPage} />
 				<Route path="/create" component={Create} />
