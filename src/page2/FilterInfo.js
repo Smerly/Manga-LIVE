@@ -5,7 +5,7 @@ function FilterInfo(props) {
 	const { own } = props;
 	return (
 		<div>
-			<div> </div>
+			<div> {/*{own.toString()}*/}</div>
 		</div>
 	);
 }

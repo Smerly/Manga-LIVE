@@ -5,7 +5,6 @@ import Navbar1 from '../Navbar1';
 import '../App.css';
 import Hots from './Hots';
 import New from './New';
-import MangaData from './MangaData';
 
 function Explore() {
 	return (
@@ -19,7 +18,6 @@ function Explore() {
 				<div className="divider" style={{ backgroundColor: '#ffc000' }}></div>
 				<New />
 				<div className="divider" style={{ backgroundColor: '#ffc000' }}></div>
-				<MangaData />
 			</section>
 		</div>
 	);

@@ -1,0 +1,39 @@
+[
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Translator"
+	},
+
+	{
+		"mangaName": "Some Manga",
+		"languageReq": [""],
+		"roles": "Artist"
+	},
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Writer"
+	},
+
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Translator"
+	},
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Translator"
+	},
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Translator"
+	},
+	{
+		"mangaName": "Some Manga",
+		"languageReq": ["English, Japanese"],
+		"roles": "Translator"
+	}
+]

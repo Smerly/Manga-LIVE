@@ -11,6 +11,7 @@ import Explore from './page3/Explore';
 import Account from './page4/Account';
 import FooterBig from './FooterBig';
 import Search from './page3/Search';
+import CreateResult from './page2/CreateResult';
 
 document.body.style = 'background: #ffc000;';
 
@@ -20,7 +21,7 @@ function App() {
 			<Router className="overallbg">
 				<Route exact path="/" component={MainPage} />
 				<Route path="/create" component={CreateFilter} />
-				<Route path="/filter" component={CreateFilter} />
+				<Route path="/filter" component={CreateResult} />
 				<Route path="/explore" component={Explore} />
 				<Route path="/account" component={Account} />
 				<Route path="/search" component={Search} />
