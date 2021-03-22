@@ -85,7 +85,7 @@ function Navbar1() {
 									<form className="form-inline" action="/action_page.php">
 										<input
 											type="search"
-											placeholder="Search"
+											placeholder="Search(Not the featured one)"
 											className="mr-sm-2 pl-3 mt-2 ml-3 search"
 										/>
 									</form>

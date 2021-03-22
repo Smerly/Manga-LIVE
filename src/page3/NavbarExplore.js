@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
 function NavbarExplore() {
 	return (
 		<section>
@@ -15,40 +16,49 @@ function NavbarExplore() {
 				<div className="collapse navbar-collapse" id="collapsibleNavbar">
 					<ul className="navbar-nav nav-fill w-100">
 						<li className="nav-item">
-							<a
-								href="#"
+							<Link
+								to={`/explore`}
 								class="customlink2 nav-link py-2"
 								style={{ fontSize: 25, fontWeight: 550 }}
 							>
 								Popular
-							</a>
+							</Link>
 						</li>
 						<li className="nav-item">
-							<a
-								href="#"
+							<Link
+								to={`/explore`}
 								className="customlink2 nav-link py-2"
 								style={{ fontSize: 25, fontWeight: 550 }}
 							>
 								Genre
-							</a>
+							</Link>
 						</li>
 						<li class="nav-item">
-							<a
-								href="#"
+							<Link
+								to={`/explore`}
 								className="customlink2 nav-link py-2"
 								style={{ fontSize: 25, fontWeight: 550 }}
 							>
 								Weekly
-							</a>
+							</Link>
 						</li>
 						<li class="nav-item">
-							<a
-								href="#"
+							<Link
+								to={`/explore`}
 								className="customlink2 nav-link py-2"
 								style={{ fontSize: 25, fontWeight: 550 }}
 							>
 								Recommended
-							</a>
+							</Link>
+						</li>
+						<li class="nav-item">
+							<Link
+								to={`/search`}
+								className="customlink2 nav-link py-2"
+								style={{ fontSize: 25, fontWeight: 550 }}
+							>
+								Search
+							</Link>
 						</li>
 					</ul>
 				</div>

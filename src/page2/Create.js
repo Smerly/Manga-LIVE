@@ -1,7 +1,10 @@
 import React from 'react';
 import Navbar2 from '../Navbar2';
 import '../App.css';
+import FilterInfo from './FilterInfo';
+import Filter from '../page5/Filter';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 function Create() {
 	// const checkState = (e) => {
 	// 	if ((e = true)) {
@@ -56,6 +59,8 @@ function Create() {
 						>
 							Here, you can filter what type of work you are looking by listing
 							your skillset and intentions.
+							{/* {own.toString()} */}
+							<FilterInfo own={own} />
 						</h1>
 					</div>
 				</div>
@@ -139,7 +144,7 @@ function Create() {
 										Mangaka/Artist{' '}
 									</label>
 								</a>
-								<input
+								{/* <input
 									type="checkbox"
 									checked={voice}
 									onChange={() => setVoice(!voice)}
@@ -153,7 +158,7 @@ function Create() {
 									<label for="t4" className="cursor">
 										Voice acting{' '}
 									</label>
-								</a>
+								</a> */}
 								<input
 									checked={translate}
 									onChange={() => setTranslate(!translate)}
@@ -172,7 +177,7 @@ function Create() {
 							</div>
 
 							<div className="row">
-								<input
+								{/* <input
 									type="checkbox"
 									checked={program}
 									onChange={() => setProgram(!program)}
@@ -186,7 +191,7 @@ function Create() {
 									<label for="t6" className="cursor">
 										Programmer{' '}
 									</label>
-								</a>
+								</a> */}
 								<input
 									type="checkbox"
 									checked={write}
@@ -202,7 +207,7 @@ function Create() {
 										Writer
 									</label>
 								</a>
-								<input
+								{/* <input
 									checked={other}
 									onChange={() => setOther(!other)}
 									type="checkbox"
@@ -216,7 +221,7 @@ function Create() {
 									<label for="t8" className="cursor">
 										Other{' '}
 									</label>
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
@@ -407,17 +412,19 @@ function Create() {
 									</div>
 								</div>
 							</div>
-							<input
-								type="submit"
-								value="Done"
-								className="buttoncustom3 bg-light font-weight-bold ml-5 mt-5 mb-4"
-								style={{
-									width: 170,
-									height: 70,
-									color: '#ffc000',
-									fontWeight: 800,
-								}}
-							/>
+							<Link to={`/filter`}>
+								<input
+									type="submit"
+									value="Done"
+									className="buttoncustom3 bg-light font-weight-bold ml-5 mt-5 mb-4"
+									style={{
+										width: 170,
+										height: 70,
+										color: '#ffc000',
+										fontWeight: 800,
+									}}
+								/>
+							</Link>
 						</div>
 					</div>
 				</section>

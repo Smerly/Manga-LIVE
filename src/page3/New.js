@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
+import Create from '../page2/Create';
+
 function New() {
 	return (
 		<div className="container">
