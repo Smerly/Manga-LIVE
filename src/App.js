@@ -12,6 +12,7 @@ import Account from './page4/Account';
 import FooterBig from './FooterBig';
 import Search from './page3/Search';
 import CreateResult from './page2/CreateResult';
+import FilterInfo from './page2/FilterInfo';
 
 document.body.style = 'background: #ffc000;';
 

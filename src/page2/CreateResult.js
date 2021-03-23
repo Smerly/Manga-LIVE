@@ -13,7 +13,7 @@ function CreateResult() {
 							className="top-header pt-5 mb-5"
 							style={{ borderBottom: '1px black solid', width: 400 }}
 						>
-							Full List
+							Requests
 						</h1>{' '}
 						<div className="row" style={{ listStyleType: 'none' }}>
 							{CREATEREQ.map((val, key) => (
