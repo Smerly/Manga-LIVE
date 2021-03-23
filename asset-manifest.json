@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Manga-LIVE/static/css/main.e01128e7.chunk.css",
-    "main.js": "/Manga-LIVE/static/js/main.95543477.chunk.js",
-    "main.js.map": "/Manga-LIVE/static/js/main.95543477.chunk.js.map",
+    "main.js": "/Manga-LIVE/static/js/main.b0dc58e0.chunk.js",
+    "main.js.map": "/Manga-LIVE/static/js/main.b0dc58e0.chunk.js.map",
     "runtime-main.js": "/Manga-LIVE/static/js/runtime-main.6d63a794.js",
     "runtime-main.js.map": "/Manga-LIVE/static/js/runtime-main.6d63a794.js.map",
     "static/css/2.92200efa.chunk.css": "/Manga-LIVE/static/css/2.92200efa.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.92200efa.chunk.css",
     "static/js/2.d2e9cfbf.chunk.js",
     "static/css/main.e01128e7.chunk.css",
-    "static/js/main.95543477.chunk.js"
+    "static/js/main.b0dc58e0.chunk.js"
   ]
 }
