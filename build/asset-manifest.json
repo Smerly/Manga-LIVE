@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Smerly/Manga-LIVE/static/css/main.5255d029.chunk.css",
+    "main.js": "/Smerly/Manga-LIVE/static/js/main.95543477.chunk.js",
+    "main.js.map": "/Smerly/Manga-LIVE/static/js/main.95543477.chunk.js.map",
+    "runtime-main.js": "/Smerly/Manga-LIVE/static/js/runtime-main.3580158d.js",
+    "runtime-main.js.map": "/Smerly/Manga-LIVE/static/js/runtime-main.3580158d.js.map",
+    "static/css/2.92200efa.chunk.css": "/Smerly/Manga-LIVE/static/css/2.92200efa.chunk.css",
+    "static/js/2.0676e99a.chunk.js": "/Smerly/Manga-LIVE/static/js/2.0676e99a.chunk.js",
+    "static/js/2.0676e99a.chunk.js.map": "/Smerly/Manga-LIVE/static/js/2.0676e99a.chunk.js.map",
+    "static/js/3.1dc2ab2d.chunk.js": "/Smerly/Manga-LIVE/static/js/3.1dc2ab2d.chunk.js",
+    "static/js/3.1dc2ab2d.chunk.js.map": "/Smerly/Manga-LIVE/static/js/3.1dc2ab2d.chunk.js.map",
+    "index.html": "/Smerly/Manga-LIVE/index.html",
+    "static/css/2.92200efa.chunk.css.map": "/Smerly/Manga-LIVE/static/css/2.92200efa.chunk.css.map",
+    "static/css/main.5255d029.chunk.css.map": "/Smerly/Manga-LIVE/static/css/main.5255d029.chunk.css.map",
+    "static/js/2.0676e99a.chunk.js.LICENSE.txt": "/Smerly/Manga-LIVE/static/js/2.0676e99a.chunk.js.LICENSE.txt",
+    "static/media/CoverForManga.1f97f43d.png": "/Smerly/Manga-LIVE/static/media/CoverForManga.1f97f43d.png",
+    "static/media/App.css": "/Smerly/Manga-LIVE/static/media/line.9570f029.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3580158d.js",
+    "static/css/2.92200efa.chunk.css",
+    "static/js/2.0676e99a.chunk.js",
+    "static/css/main.5255d029.chunk.css",
+    "static/js/main.95543477.chunk.js"
+  ]
+}
