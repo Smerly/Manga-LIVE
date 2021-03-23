@@ -60,7 +60,7 @@ function Create() {
 							Here, you can filter what type of work you are looking by listing
 							your skillset and intentions.
 							{/* {own.toString()} */}
-							<FilterInfo own={own} />
+							{/* <FilterInfo own={own} /> */}
 						</h1>
 					</div>
 				</div>
