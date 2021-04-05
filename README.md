@@ -1,4 +1,4 @@
-![Visual Studio Marketplace Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/Manga-LIVE)
+https://img.shields.io/visual-studio-marketplace/last-updated/Manga-LIVE?color=#ffc000style=plastic
 # Manga-LIVE
  A website for posting manga and collaborating with others.
  
