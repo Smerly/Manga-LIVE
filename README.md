@@ -1,4 +1,4 @@
-https://img.shields.io/visual-studio-marketplace/last-updated/Manga-LIVE?color=#ffc000style=plastic
+https://img.shields.io/visual-studio-marketplace/last-updated/Manga-LIVE?style=plastic
 # Manga-LIVE
  A website for posting manga and collaborating with others.
  
