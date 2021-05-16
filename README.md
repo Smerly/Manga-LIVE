@@ -1,4 +1,4 @@
-
+![GitHub repo size](https://img.shields.io/github/repo-size/Smerly/Manga-LIVE)
 # Manga-LIVE
  A website for posting manga and collaborating with others.
  
