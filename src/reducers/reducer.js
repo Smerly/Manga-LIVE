@@ -6,8 +6,31 @@ const mangaReducer = (state = [], action) => {
 		// For each of these case scenarios, put what you want changed as a return
 		case ADD_MANGA:
 			// Below is bringing the variables from actions to here
-			const { title, pic, description, pages } = action.payload;
-			return [...state, { title, pic, description, pages }];
+			const {
+				title,
+				genre,
+				genre2,
+				summary,
+				pic,
+				description,
+				pages,
+				author,
+				artist,
+			} = action.payload;
+			return [
+				...state,
+				{
+					title,
+					genre,
+					genre2,
+					summary,
+					pic,
+					description,
+					pages,
+					author,
+					artist,
+				},
+			];
 
 		case REMOVE_MANGA:
 			const { index } = action.payload;

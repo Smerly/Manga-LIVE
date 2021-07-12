@@ -1,7 +1,7 @@
 import React from 'react';
 import Create from '../page2/Create';
 import Navbar1 from '../Navbar1';
-import FilterInfo from '../page2/FilterInfo';
+
 import '../App.css';
 
 function Filter() {
@@ -18,9 +18,7 @@ function Filter() {
 							Search Results:
 						</h1>
 						<div className="row">
-							<div className="card m-2 mb-3 p-2 explorebox">
-								<FilterInfo />
-							</div>
+							<div className="card m-2 mb-3 p-2 explorebox"></div>
 							<div className="card m-2 mb-3 p-2 explorebox"></div>
 							<div className="card m-2 mb-3 p-2 explorebox"></div>
 							<div className="card m-2 mb-3 p-2 explorebox"></div>

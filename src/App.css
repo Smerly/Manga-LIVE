@@ -302,3 +302,12 @@ a.customlink4 {
 .cursor {
 	cursor: pointer;
 }
+
+.labels-create {
+	display: block;
+}
+
+.column-flex {
+	display: flex;
+	flex-direction: column;
+}
