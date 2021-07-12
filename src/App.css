@@ -5,9 +5,13 @@ body {
 	padding: 0px;
 	overflow-x: hidden;
 }
+::placeholder {
+	color: #ffbf009f;
+	padding-left: 5px;
+}
 
 .overallbg {
-	background-color: #ffc000;
+	background-color: #ffbf00ea;
 	font-family: Helvetica !important;
 }
 

@@ -24,7 +24,7 @@ import {
 	setFemale,
 	setBoth,
 } from './actions';
-
+import { NavLink } from 'react-router-dom';
 function Manga() {
 	const dispatch = useDispatch();
 	const {
@@ -90,6 +90,7 @@ function Manga() {
 								fontSize: '1.4em',
 								padding: 20,
 							}}
+							placeholder="Enter your title"
 						/>
 						<div>
 							<label
@@ -108,6 +109,7 @@ function Manga() {
 									setAuthor(e.target.value);
 								}}
 								style={{ marginRight: 80 }}
+								placeholder="Who wrote the story?"
 							/>
 						</div>
 						<div>
@@ -127,6 +129,7 @@ function Manga() {
 									setArtist(e.target.value);
 								}}
 								style={{ marginRight: 80 }}
+								placeholder="Who illustrated this?"
 							/>
 						</div>
 					</div>
@@ -148,11 +151,13 @@ function Manga() {
 								setGenre(e.target.value);
 							}}
 							style={{ marginRight: 80 }}
+							placeholder="What's the genre?"
 						/>
 						<input
 							onChange={(e) => {
 								setGenre2(e.target.value);
 							}}
+							placeholder="What's the 2nd genre?"
 						/>
 					</div>
 					<div className="mt-5">
@@ -173,6 +178,7 @@ function Manga() {
 								setDescription(e.target.value);
 							}}
 							style={{ height: '4em', width: 600 }}
+							placeholder="Write a short description of your story here"
 						/>
 					</div>
 
@@ -189,6 +195,7 @@ function Manga() {
 							Summary
 						</label>
 						<textarea
+							placeholder="Explain your story here!"
 							type="text"
 							onChange={(e) => {
 								setSummary(e.target.value);
@@ -203,9 +210,22 @@ function Manga() {
 							}}
 						/>
 					</div> */}
-
-					<button
+					{/* <button
+						style={{ justifySelf: 'center', alignSelf: 'center' }}
+						className="mt-5 buttoncustom2 mb-5"
+					> */}
+					<NavLink
+						to={`search`}
 						type="submit"
+						className="mt-5 buttoncustom2 mb-5"
+						style={{
+							justifySelf: 'center',
+							alignSelf: 'center',
+							textDecoration: 'none',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
 						onClick={(e) => {
 							dispatch(
 								addManga(
@@ -221,12 +241,11 @@ function Manga() {
 								)
 							);
 						}}
-						className="mt-5 buttoncustom2 mb-5"
-						style={{ justifySelf: 'center', alignSelf: 'center' }}
 					>
 						{' '}
 						Submit{' '}
-					</button>
+					</NavLink>
+					{/* </button> */}
 				</form>
 			</div>
 			{/* {own ? 'You are creating your own' : 'You are not creating your own'} */}
