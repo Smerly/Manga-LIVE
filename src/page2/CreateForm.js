@@ -158,7 +158,7 @@ function Create(props) {
 									className="toggle col-sm"
 									id="t4"
 								/>
-								<a
+								{/* <a
 									className="customlink3 nav-link m-2 my-5 mx-5"
 									style={{ fontSize: 64, fontWeight: 800 }}
 								>
@@ -172,7 +172,7 @@ function Create(props) {
 									type="checkbox"
 									className="toggle col-sm"
 									id="t5"
-								/>
+								/> */}
 								<a
 									className="customlink3 nav-link m-2 my-5 mx-5"
 									style={{ fontSize: 64, fontWeight: 800 }}
@@ -191,7 +191,7 @@ function Create(props) {
 									className="toggle col-sm"
 									id="t6"
 								/>
-								<a
+								{/* <a
 									className="customlink3 nav-link m-2 my-5 mx-5"
 									style={{ fontSize: 64, fontWeight: 800 }}
 								>
@@ -205,7 +205,7 @@ function Create(props) {
 									onChange={(e) => dispatch(setWrite(e.target.checked))}
 									className="toggle col-sm"
 									id="t7"
-								/>
+								/> */}
 								<a
 									className="customlink3 nav-link m-2 my-5 mx-5"
 									style={{ fontSize: 64, fontWeight: 800 }}
@@ -221,14 +221,14 @@ function Create(props) {
 									className="toggle col-sm"
 									id="t8"
 								/>
-								<a
+								{/* <a
 									className="customlink3 nav-link m-2 my-5 mx-5"
 									style={{ fontSize: 64, fontWeight: 800 }}
 								>
 									<label for="t8" className="cursor">
 										Other{' '}
 									</label>
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
@@ -362,7 +362,7 @@ function Create(props) {
 											className="toggle"
 											id="t17"
 										/>
-										<a
+										{/* <a
 											className=" customlink3 nav-link m-2 my-5 mx-5"
 											style={{ fontSize: 40, fontWeight: 800 }}
 										>
@@ -415,7 +415,7 @@ function Create(props) {
 											<label for="t19" className="cursor">
 												Both/Other
 											</label>
-										</a>
+										</a> */}
 									</div>
 								</div>
 							</div>
