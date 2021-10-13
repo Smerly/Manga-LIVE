@@ -1,97 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
+import { writeDailySpecial } from './firebase/firebase';
+// import { firebase } from './firebase/firebase';
 
-// function MangaList() {
-// 	const mangas = useSelector((state) => state.mangas);
-// 	const { own, help } = useSelector((state) => state.filters);
-// 	const MangaList = mangas.map((manga, index) => {
-// 		return (
-// 			<div key={index} className="bg-gray">
-// 				<div className="container bg-light" style={{ minHeight: 700 }}>
-// 					<div className="card m-2 mb-3 p-2 listbox">
-// 						<div className="column">
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								<h3>{manga.title}</h3>
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								{/* By: {val.author} */}
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								{/* Art by: {val.artist} */}
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								Current Chapters: {manga.page}
-// 							</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		);
-// 	});
-
-// 	return <div>{MangaList}</div>;
-// }
+import { onSnapshot, collection } from 'firebase/firestore';
 
 function MangaList() {
-	const [search, setSearch] = useState('');
-	const mangas = useSelector((state) => state.mangas);
-	const { own, help } = useSelector((state) => state.filters);
-	const MangaList = mangas
-		.filter((val) => {
-			if (search == '') {
-				return val;
-			} else if (val.title.toLowerCase().includes(search.toLowerCase())) {
-				return val;
-			}
-		})
-		.map((manga, index) => {
-			return (
-				<li key={index} style={{ listStyleType: 'none' }}>
-					<div className="card m-2 mb-3 listbox">
-						<button
-							className="column p-2"
-							style={{
-								width: '15rem',
-								height: '15rem',
-								background: 'none',
-								border: 'none',
-							}}
-						>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								<h3>{manga.title}</h3>
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								By: {manga.author}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {manga.artist}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Chapters: {manga.pages}
-							</div>
-						</button>
-					</div>
-				</li>
-			);
-		});
+	// const [search, setSearch] = useState('');
+	// const mangas = useSelector((state) => state.mangas);
+	// const { own, help } = useSelector((state) => state.filters);
 
+	// useEffect(() => {
+	// 	onSnapshot(collection(db, 'mangas'), (snapshot) => {
+	// 		console.log(snapshot);
+	// 	});
+	// });
+
+	// ------
+
+	// const db = firebase.firestore().collection('mangas');
+
+	const firebaseConfig = {
+		apiKey: 'AIzaSyBJjWPETurz47yap-YMj9-vSXyLHsKSKXI',
+		authDomain: 'manga-live-6227a.firebaseapp.com',
+		projectId: 'manga-live-6227a',
+		storageBucket: 'manga-live-6227a.appspot.com',
+		messagingSenderId: '676022570827',
+		appId: '1:676022570827:web:68e7afd40db7d5041e22ce',
+		measurementId: 'G-2JE9MV616G',
+	};
+
+	// firebase.initializeApp(firebaseConfig);
+	// var db = firebase.firestore();
+
+	// firestore.initializeApp(firebaseConfig);
+	if (true) {
+		writeDailySpecial();
+	}
+	console.log(writeDailySpecial);
 	return (
 		<div>
-			<div className="container bg-light" style={{ minHeight: 700 }}>
-				<form className="form-inline mt-5 mb-5" action="/action_page.php">
-					<input
-						type="search"
-						placeholder="Search.."
-						className="mr-sm-2 pl-3 my-2 ml-3 search3 mt-5"
-						onChange={(e) => {
-							setSearch(e.target.value);
-						}}
-					/>
-				</form>
-				<div className="row justify-content-center align-items-center">
-					{MangaList}
-				</div>
-			</div>
+			<div></div>
 		</div>
 	);
 }
