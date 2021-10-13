@@ -15,7 +15,6 @@
 // export default getFirestore;
 
 import { initializeApp } from 'firebase/app';
-// import firebase from 'firebase';
 import {
 	initializeFirestore,
 	CACHE_SIZE_UNLIMITED,
@@ -44,56 +43,80 @@ const firebaseConfig = {
 	measurementId: 'G-2JE9MV616G',
 };
 
-// firebase.initializeApp(firebaseConfig);
-// var db = firebase.firestore();
-
-// const firestore = getFirestore();
-// firestore.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const specialOfTheDay = doc(db, 'dailySpecial3/2021-09-14');
+const Mangas = doc(db, 'dailySpecial4/2021-09-14');
 
-export async function writeDailySpecial() {
+// Functions
+
+// Adds new section
+
+export async function writeManga(
+	titleIn,
+	genreIn,
+	genreIn2,
+	summaryIn,
+	picIn,
+	descriptionIn,
+	pageIn,
+	authorIn,
+	artistIn
+) {
 	const docData = {
-		description: 'A description',
-		price: 3.99,
-		milk: 'Whole',
-		vegan: false,
+		title: titleIn,
+		genre: genreIn,
+		genre2: genreIn2,
+		summary: summaryIn,
+		pic: picIn,
+		description: descriptionIn,
+		page: pageIn,
+		author: authorIn,
+		artist: artistIn,
 	};
 
-	// Will completely overwrite something if the name is the same
-
-	//								If you do merge true, it will do what updateDoc does, but it will create it if it doesnt exist
-
-	// setDoc(specialOfTheDay, docData, { merge: true });
-
-	// Only if already exists, and only overwrites what you need to overwrite
-
-	// updateDoc(specialOfTheDay, docData);
-
 	try {
-		await setDoc(specialOfTheDay, docData, { merge: true });
+		await setDoc(Mangas, docData, { merge: true });
 		console.log(`This value has been written to the db`);
 	} catch (error) {
 		console.log(`I've got an error ${error}`);
 	}
 }
 
-const ordersCollection = collection(db, 'orders');
+// Adds new manga
 
-async function addANewDocument() {
-	const newDoc = await addDoc(ordersCollection, {
-		customer: 'Arthur',
-		drink: 'Latte',
-		total_cost: (100 + Math.floor(Math.random() * 400)) / 100,
+const mangaCollection = collection(db, 'mangas');
+
+export async function addNewManga(
+	titleIn,
+	genreIn,
+	genreIn2,
+	summaryIn,
+	picIn,
+	descriptionIn,
+	pageIn,
+	authorIn,
+	artistIn
+) {
+	const newDoc = await addDoc(mangaCollection, {
+		title: titleIn,
+		genre: genreIn,
+		genre2: genreIn2,
+		summary: summaryIn,
+		pic: picIn,
+		description: descriptionIn,
+		page: pageIn,
+		author: authorIn,
+		artist: artistIn,
 	});
+
+	console.log(`your doc was created at ${newDoc.path}`);
 }
 
 // Reads a doc
 
-async function readASingleDocument() {
-	const mySnapshot = await getDoc(specialOfTheDay);
+export async function readSingleManga() {
+	const mySnapshot = await getDoc(Mangas);
 	if (mySnapshot.exists()) {
 		const docData = mySnapshot.data();
 		console.log(`My data is ${JSON.stringify(docData)}`);
@@ -106,8 +129,8 @@ async function readASingleDocument() {
 
 let dailySpecialSubscribe;
 
-function listenToADocument() {
-	dailySpecialSubscribe = onSnapshot(specialOfTheDay, (docSnapshot) => {
+export function listenToManga() {
+	dailySpecialSubscribe = onSnapshot(Mangas, (docSnapshot) => {
 		const docData = docSnapshot.data();
 		console.log(`In realtime, docData is ${JSON.stringify(docData)}`);
 	});
@@ -115,39 +138,37 @@ function listenToADocument() {
 
 // Only call the listener at appropraite time to lower network usage. Example is below and dailySpecialSubscribe above.
 
-function cnancelMyListenerAtAppropriateTime() {
+export function cancelMyListenerAtAppropriateTime() {
 	dailySpecialSubscribe();
 }
 
 // Read multiple documents by creating a query:
 
-async function queryForDocuments() {
-	const customerOrdersQuery = query(
-		collection(db, 'orders'),
-		where('drink', '==', 'latte'),
-		orderBy('price'),
-		limit(10)
+export async function queryForManga() {
+	const mangaQuery = query(
+		collection(db, 'mangas')
+		// orderBy('price')
 	);
 
 	// get multiple docs
-	const querySnapshot = await getDocs(customerOrdersQuery);
+	const querySnapshot = await getDocs(mangaQuery);
 
 	// const allDocs = querySnapshot.docs((snap) => {
 	// 	console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
 	// });
 
-	// use forEach() if you wan to iterate through each snapshot
-
-	let callLaterListener;
-	querySnapshot.forEach((snap) => {
-		console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+	// let callLaterListener;
+	const allMangasArray = [];
+	const allMangas = querySnapshot.forEach((snap) => {
+		const manga = [snap.id, JSON.stringify(snap.data())];
+		// console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
+		allMangasArray.push(manga);
 	});
+	console.log(allMangasArray);
+	return allMangasArray;
 
-	// How to do listeners for querySnapshot
-
-	callLaterListener = onSnapshot(customerOrdersQuery, (querySnapshot) => {
-		console.log(JSON.stringify(querySnapshot.docs.map((e) => e.data())));
-	});
+	// 	console.log(JSON.stringify(querySnapshot.docs.map((e) => e.data())));
+	// });
 }
 
 // writeDailySpecial();

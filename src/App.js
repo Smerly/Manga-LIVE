@@ -18,7 +18,8 @@ import { useState } from 'react';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 // import filterReducers from './reducers';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import filterReducer from './reducers/FilterReducer';
 // import firebase from 'firebase';
 document.body.style = 'background: #ffc000;';
@@ -49,24 +50,10 @@ export const saveState = (state) => {
 };
 
 const persistedState = loadState();
-const store = createStore(reducers, persistedState);
+const store = createStore(reducers, persistedState, applyMiddleware(thunk));
 store.subscribe(() => {
 	saveState(store.getState());
 });
-
-// Firebase
-
-// const firebaseConfig = {
-// 	apiKey: 'AIzaSyBJjWPETurz47yap-YMj9-vSXyLHsKSKXI',
-// 	authDomain: 'manga-live-6227a.firebaseapp.com',
-// 	projectId: 'manga-live-6227a',
-// 	storageBucket: 'manga-live-6227a.appspot.com',
-// 	messagingSenderId: '676022570827',
-// 	appId: '1:676022570827:web:68e7afd40db7d5041e22ce',
-// 	measurementId: 'G-2JE9MV616G',
-// };
-
-// firebase.initializeApp(firebaseConfig);
 
 // App Component
 
