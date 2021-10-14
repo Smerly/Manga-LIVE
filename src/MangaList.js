@@ -25,6 +25,7 @@ function MangaList() {
 			}
 		})
 		.map((manga, index) => {
+			console.log(manga);
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>
 					<div className="card m-2 mb-3 listbox">
