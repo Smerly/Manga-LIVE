@@ -96,7 +96,6 @@ function Manga() {
 	// console.log('done!');
 	// }
 
-	queryForManga();
 	return (
 		<div className="bg-gray" style={{ minHeight: 700 }}>
 			<Navbar1 />
@@ -263,18 +262,16 @@ function Manga() {
 							alignItems: 'center',
 						}}
 						onClick={(e) => {
-							dispatch(
-								addManga(
-									title,
-									genre,
-									genre2,
-									summary,
-									pic,
-									description,
-									page,
-									author,
-									artist
-								)
+							addNewManga(
+								title,
+								genre,
+								genre2,
+								summary,
+								pic,
+								description,
+								page,
+								author,
+								artist
 							);
 						}}
 					>
