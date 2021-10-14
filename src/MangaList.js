@@ -27,7 +27,7 @@ function MangaList() {
 		.map((manga, index) => {
 			// console.log(manga);
 			// console.log(manga[1].title);
-			console.log('3:16 pm');
+			console.log('3:18 pm');
 
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>
@@ -48,7 +48,7 @@ function MangaList() {
 								By: {manga[1].author}
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {manga.artist}
+								Art by: {manga[1].artist}
 							</div>
 							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>
 								Chapters: {mangaLayer2[1].pages}
