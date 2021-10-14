@@ -25,6 +25,15 @@ import {
 	setBoth,
 } from './actions';
 import { NavLink } from 'react-router-dom';
+
+import {
+	writeManga,
+	addNewManga,
+	readSingleManga,
+	listenToManga,
+	cancelMyListenerAtAppropriateTime,
+	queryForManga,
+} from './firebase/firebase';
 function Manga() {
 	const dispatch = useDispatch();
 	const {
@@ -50,7 +59,6 @@ function Manga() {
 	} = useSelector((state) => {
 		return state.filters;
 	});
-	console.log(own);
 	const [title, setTitle] = useState('');
 	const [genre, setGenre] = useState('');
 	const [genre2, setGenre2] = useState('');
@@ -60,6 +68,33 @@ function Manga() {
 	const [page, setPage] = useState('3');
 	const [author, setAuthor] = useState('');
 	const [artist, setArtist] = useState('');
+
+	// if (true) {
+	// writeManga(
+	// 	'some title',
+	// 	'some genre',
+	// 	'some second genre',
+	// 	'some summary',
+	// 	'some pic',
+	// 	'some description',
+	// 	'some amount of pages',
+	// 	'some author',
+	// 	'some artist'
+	// );
+
+	// addNewManga(
+	// 	'some title',
+	// 	'some genre',
+	// 	'some second genre',
+	// 	'some summarylol',
+	// 	'some pic',
+	// 	'some description',
+	// 	'some amount of pages',
+	// 	'some author',
+	// 	'some artist'
+	// );
+	// console.log('done!');
+	// }
 
 	return (
 		<div className="bg-gray" style={{ minHeight: 700 }}>
@@ -227,18 +262,16 @@ function Manga() {
 							alignItems: 'center',
 						}}
 						onClick={(e) => {
-							dispatch(
-								addManga(
-									title,
-									genre,
-									genre2,
-									summary,
-									pic,
-									description,
-									page,
-									author,
-									artist
-								)
+							addNewManga(
+								title,
+								genre,
+								genre2,
+								summary,
+								pic,
+								description,
+								page,
+								author,
+								artist
 							);
 						}}
 					>

@@ -1,25 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
-import styled from 'styled-components';
 import './styled';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import MainPage from './page1/MainPage';
 import CreateFilter from './page5/CreateFilter';
-import Create from './page2/Create';
 import Explore from './page3/Explore';
 import Account from './page4/Account';
 import FooterBig from './FooterBig';
 import Search from './page3/Search';
-import CreateResult from './page2/CreateResult';
 import Manga from './Manga';
-import { useState } from 'react';
-
 import { Provider } from 'react-redux';
 import reducers from './reducers';
-// import filterReducers from './reducers';
-import { createStore } from 'redux';
-import filterReducer from './reducers/FilterReducer';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 document.body.style = 'background: #ffc000;';
 
 // Save/Load Mangas and Filter
@@ -48,7 +41,7 @@ export const saveState = (state) => {
 };
 
 const persistedState = loadState();
-const store = createStore(reducers, persistedState);
+const store = createStore(reducers, persistedState, applyMiddleware(thunk));
 store.subscribe(() => {
 	saveState(store.getState());
 });

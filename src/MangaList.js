@@ -1,41 +1,21 @@
-import React, { useState } from 'react';
-import { connect, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { loadManga } from './actions';
 
-// function MangaList() {
-// 	const mangas = useSelector((state) => state.mangas);
-// 	const { own, help } = useSelector((state) => state.filters);
-// 	const MangaList = mangas.map((manga, index) => {
-// 		return (
-// 			<div key={index} className="bg-gray">
-// 				<div className="container bg-light" style={{ minHeight: 700 }}>
-// 					<div className="card m-2 mb-3 p-2 listbox">
-// 						<div className="column">
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								<h3>{manga.title}</h3>
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								{/* By: {val.author} */}
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								{/* Art by: {val.artist} */}
-// 							</div>
-// 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-// 								Current Chapters: {manga.page}
-// 							</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		);
-// 	});
+import { queryForManga } from './firebase/firebase';
 
-// 	return <div>{MangaList}</div>;
-// }
+import { onSnapshot, collection } from 'firebase/firestore';
 
 function MangaList() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(loadManga());
+	}, []);
+
 	const [search, setSearch] = useState('');
 	const mangas = useSelector((state) => state.mangas);
-	const { own, help } = useSelector((state) => state.filters);
+
 	const MangaList = mangas
 		.filter((val) => {
 			if (search == '') {
@@ -44,9 +24,9 @@ function MangaList() {
 				return val;
 			}
 		})
-		.map((manga, index) => {
+		.map((mangaLayer2, index1) => {
 			return (
-				<li key={index} style={{ listStyleType: 'none' }}>
+				<li key={index1} style={{ listStyleType: 'none' }}>
 					<div className="card m-2 mb-3 listbox">
 						<button
 							className="column p-2"
@@ -58,17 +38,17 @@ function MangaList() {
 							}}
 						>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								<h3>{manga.title}</h3>
+								<h3>{mangaLayer2[1].title}</h3>
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								By: {manga.author}
+								By: {mangaLayer2[1].author}
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {manga.artist}
+								Art by: {mangaLayer2[1].artist}
 							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Chapters: {manga.pages}
-							</div>
+							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>
+								Chapters: {mangaLayer2[1].pages}
+							</div> */}
 						</button>
 					</div>
 				</li>
@@ -79,14 +59,14 @@ function MangaList() {
 		<div>
 			<div className="container bg-light" style={{ minHeight: 700 }}>
 				<form className="form-inline mt-5 mb-5" action="/action_page.php">
-					<input
+					{/* <input
 						type="search"
 						placeholder="Search.."
 						className="mr-sm-2 pl-3 my-2 ml-3 search3 mt-5"
 						onChange={(e) => {
 							setSearch(e.target.value);
 						}}
-					/>
+					/> */}
 				</form>
 				<div className="row justify-content-center align-items-center">
 					{MangaList}

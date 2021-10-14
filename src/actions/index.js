@@ -1,8 +1,11 @@
+import { queryForManga } from '../firebase/firebase';
+
 // Mangas
 
 export const ADD_MANGA = 'ADD_MANGA';
 export const REMOVE_MANGA = 'REMOVE_MANGA';
 export const EDIT_MANGA = 'EDIT_MANGA';
+export const LOAD_MANGA = 'LOAD_MANGA';
 
 // Filters
 
@@ -66,6 +69,21 @@ export const EditManga = (title, pic, description, pages) => {
 	return {
 		type: ADD_MANGA,
 		payload: { title, pic, description, pages },
+	};
+};
+
+// Load Manga
+
+export const loadManga = () => {
+	return async (dispatch) => {
+		// Load the data from Firebase
+		const data = await queryForManga();
+		dispatch({
+			type: LOAD_MANGA,
+			payload: {
+				data,
+			},
+		});
 	};
 };
 
