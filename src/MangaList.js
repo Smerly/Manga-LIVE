@@ -39,13 +39,13 @@ function MangaList() {
 							}}
 						>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								<h3>{manga[1].title}</h3>
+								<h3>{manga.title}</h3>
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								By: {manga[1].author}
+								By: {manga.author}
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {manga[1].artist}
+								Art by: {manga.artist}
 							</div>
 							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>
 								Chapters: {mangaLayer2[1].pages}
