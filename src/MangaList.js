@@ -26,8 +26,8 @@ function MangaList() {
 		})
 		.map((manga, index) => {
 			// console.log(manga);
-			// console.log(manga[1].title);
-			console.log('3:18 pm');
+			console.log(manga[1].title);
+			console.log('4:26 pm');
 
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>

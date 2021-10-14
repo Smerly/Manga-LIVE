@@ -129,7 +129,7 @@ export async function queryForManga() {
 	const allMangas = querySnapshot.forEach((snap) => {
 		const manga = [snap.id, snap.data()];
 		allMangasArray.push(manga);
-		console.log(snap.data);
+		// console.log(snap.data);
 	});
 
 	return allMangasArray;
