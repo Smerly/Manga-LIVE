@@ -1,19 +1,3 @@
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore } from 'firebase/firestore';
-
-// const firebaseConfig = {
-// 	apiKey: 'AIzaSyBJjWPETurz47yap-YMj9-vSXyLHsKSKXI',
-// 	authDomain: 'manga-live-6227a.firebaseapp.com',
-// 	projectId: 'manga-live-6227a',
-// 	storageBucket: 'manga-live-6227a.appspot.com',
-// 	messagingSenderId: '676022570827',
-// 	appId: '1:676022570827:web:68e7afd40db7d5041e22ce',
-// 	measurementId: 'G-2JE9MV616G',
-// };
-
-// const app = initializeApp(firebaseConfig);
-// export default getFirestore;
-
 import { initializeApp } from 'firebase/app';
 import {
 	initializeFirestore,
@@ -33,15 +17,7 @@ import {
 	getDocs,
 } from 'firebase/firestore';
 
-const firebaseConfig = {
-	apiKey: 'AIzaSyBJjWPETurz47yap-YMj9-vSXyLHsKSKXI',
-	authDomain: 'manga-live-6227a.firebaseapp.com',
-	projectId: 'manga-live-6227a',
-	storageBucket: 'manga-live-6227a.appspot.com',
-	messagingSenderId: '676022570827',
-	appId: '1:676022570827:web:68e7afd40db7d5041e22ce',
-	measurementId: 'G-2JE9MV616G',
-};
+import firebaseConfig from './firebaseConfig.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -137,7 +113,6 @@ export function listenToManga() {
 }
 
 // Only call the listener at appropraite time to lower network usage. Example is below and dailySpecialSubscribe above.
-
 export function cancelMyListenerAtAppropriateTime() {
 	dailySpecialSubscribe();
 }
@@ -149,31 +124,13 @@ export async function queryForManga() {
 		collection(db, 'mangas')
 		// orderBy('price')
 	);
-
-	// get multiple docs
 	const querySnapshot = await getDocs(mangaQuery);
-
-	// const allDocs = querySnapshot.docs((snap) => {
-	// 	console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
-	// });
-
-	// let callLaterListener;
 	const allMangasArray = [];
 	const allMangas = querySnapshot.forEach((snap) => {
 		const manga = [snap.id, snap.data()];
-		// console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
 		allMangasArray.push(manga);
 		console.log(snap.data);
 	});
-	// console.log(allMangasArray);
 
 	return allMangasArray;
-
-	// 	console.log(JSON.stringify(querySnapshot.docs.map((e) => e.data())));
-	// });
 }
-
-// writeDailySpecial();
-// addANewDocument();
-// readASingleDocument();
-// queryForDocuments();
