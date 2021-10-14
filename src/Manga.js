@@ -59,7 +59,6 @@ function Manga() {
 	} = useSelector((state) => {
 		return state.filters;
 	});
-	console.log(own);
 	const [title, setTitle] = useState('');
 	const [genre, setGenre] = useState('');
 	const [genre2, setGenre2] = useState('');
@@ -97,6 +96,7 @@ function Manga() {
 	// console.log('done!');
 	// }
 
+	queryForManga();
 	return (
 		<div className="bg-gray" style={{ minHeight: 700 }}>
 			<Navbar1 />

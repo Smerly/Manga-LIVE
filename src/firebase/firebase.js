@@ -160,11 +160,13 @@ export async function queryForManga() {
 	// let callLaterListener;
 	const allMangasArray = [];
 	const allMangas = querySnapshot.forEach((snap) => {
-		const manga = [snap.id, JSON.stringify(snap.data())];
+		const manga = [snap.id, snap.data()];
 		// console.log(`Document ${snap.id} contains ${JSON.stringify(snap.data())}`);
 		allMangasArray.push(manga);
+		console.log(snap.data);
 	});
-	console.log(allMangasArray);
+	// console.log(allMangasArray);
+
 	return allMangasArray;
 
 	// 	console.log(JSON.stringify(querySnapshot.docs.map((e) => e.data())));

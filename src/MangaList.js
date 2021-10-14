@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { connect, useSelector } from 'react-redux';
-// import { writeDailySpecial } from './firebase/firebase';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import { loadManga } from './actions';
+
 import { queryForManga } from './firebase/firebase';
-// import { firebase } from './firebase/firebase';
 
 import { onSnapshot, collection } from 'firebase/firestore';
 
-console.log(queryForManga()[1]);
 function MangaList() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(loadManga());
+	}, []);
+
 	// const [search, setSearch] = useState('');
-	// const mangas = useSelector((state) => state.mangas);
-	// const { own, help } = useSelector((state) => state.filters);
+	const mangas = useSelector((state) => state.mangas);
+	console.log(mangas);
 
 	// firestore.initializeApp(firebaseConfig);
 	// if (true) {
@@ -19,7 +24,15 @@ function MangaList() {
 	// console.log(writeDailySpecial);
 	return (
 		<div>
-			<div>{}</div>
+			<div>
+				{mangas.map((mangaLayer2, index1) => {
+					return (
+						<div key={index1}>
+							<div>{mangaLayer2[1].title}</div>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
