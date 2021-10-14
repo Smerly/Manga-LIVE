@@ -24,9 +24,9 @@ function MangaList() {
 				return val;
 			}
 		})
-		.map((mangaLayer2, index1) => {
+		.map((manga, index) => {
 			return (
-				<li key={index1} style={{ listStyleType: 'none' }}>
+				<li key={index} style={{ listStyleType: 'none' }}>
 					<div className="card m-2 mb-3 listbox">
 						<button
 							className="column p-2"
@@ -38,13 +38,13 @@ function MangaList() {
 							}}
 						>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								<h3>{mangaLayer2[1].title}</h3>
+								<h3>{manga[1].title}</h3>
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								By: {mangaLayer2[1].author}
+								By: {manga[1].author}
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {mangaLayer2[1].artist}
+								Art by: {manga[1].artist}
 							</div>
 							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>
 								Chapters: {mangaLayer2[1].pages}
