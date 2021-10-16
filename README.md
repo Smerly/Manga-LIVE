@@ -7,6 +7,18 @@ WIP | A prototype website for posting manga and collaborating with others to cre
 
 Posting feature is implemented with a database! Posting with chapters is still WIP.
 
+## How to use
+
+Since the current WIP version of Manga-LIVE has posting services and the use of a database, you can post!
+
+### How to see posts
+
+From the landing page, navigate to "explore" at the top navbar, then, navigate to "search" in the navbar below the main navbar
+
+### How to make a post
+
+From the landing page, navigate to "create" at the top navbar. The current filter gather data, but do not function with the creation of your post. So you can skip the filter info and go straight to submit the form. After submitting the form, Fill out the post details and submit it!
+
 ## How to run Manga-LIVE
 
 ### 1. Run with Github pages
