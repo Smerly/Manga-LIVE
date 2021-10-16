@@ -114,11 +114,17 @@ function Manga() {
 							{' '}
 							Title
 						</label>
+						{title}
 						<input
 							type="text"
 							onChange={(e) => {
-								setTitle(e.target.value);
+								if (title.length <= 20) {
+									setTitle(e.target.value);
+								} else {
+								}
 							}}
+							maxLength="20"
+							value={title}
 							style={{
 								width: 300,
 								height: '2.5em',
@@ -141,8 +147,13 @@ function Manga() {
 							</label>
 							<input
 								onChange={(e) => {
-									setAuthor(e.target.value);
+									if (author.length <= 20) {
+										setAuthor(e.target.value);
+									} else {
+									}
 								}}
+								maxLength="20"
+								value={author}
 								style={{ marginRight: 80 }}
 								placeholder="Who wrote the story?"
 							/>
@@ -157,12 +168,17 @@ function Manga() {
 									marginLeft: 10,
 								}}
 							>
-								Artist
+								Artist {artist}
 							</label>
 							<input
 								onChange={(e) => {
-									setArtist(e.target.value);
+									if (artist.length <= 20) {
+										setArtist(e.target.value);
+									} else {
+									}
 								}}
+								maxLength="20"
+								value={artist}
 								style={{ marginRight: 80 }}
 								placeholder="Who illustrated this?"
 							/>
@@ -183,15 +199,25 @@ function Manga() {
 						</label>
 						<input
 							onChange={(e) => {
-								setGenre(e.target.value);
+								if (genre.length <= 20) {
+									setGenre(e.target.value);
+								} else {
+								}
 							}}
+							maxLength="20"
+							value={genre}
 							style={{ marginRight: 80 }}
 							placeholder="What's the genre?"
 						/>
 						<input
 							onChange={(e) => {
-								setGenre2(e.target.value);
+								if (genre2.length <= 20) {
+									setGenre2(e.target.value);
+								} else {
+								}
 							}}
+							maxLength="20"
+							value={genre2}
 							placeholder="What's the 2nd genre?"
 						/>
 					</div>
@@ -210,8 +236,13 @@ function Manga() {
 						<textarea
 							type="text"
 							onChange={(e) => {
-								setDescription(e.target.value);
+								if (description.length <= 150) {
+									setDescription(e.target.value);
+								} else {
+								}
 							}}
+							maxLength="150"
+							value={description}
 							style={{ height: '4em', width: 600 }}
 							placeholder="Write a short description of your story here"
 						/>
@@ -233,8 +264,13 @@ function Manga() {
 							placeholder="Explain your story here!"
 							type="text"
 							onChange={(e) => {
-								setSummary(e.target.value);
+								if (summary.length <= 300) {
+									setSummary(e.target.value);
+								} else {
+								}
 							}}
+							maxLength="300"
+							value={summary}
 							style={{ height: 400, width: 900 }}
 						/>
 					</div>
