@@ -11,7 +11,7 @@ Posting feature is implemented with a database! Posting with chapters is still W
 
 ### 1. Run with Github pages
 
-You can run Manga-LIVE with the github-pages link smerly.github.io/manga-live/
+You can run Manga-LIVE with the github-pages link [here](https://smerly.github.io/Manga-LIVE/)
 
 ### 2. Run on your local machine
 
