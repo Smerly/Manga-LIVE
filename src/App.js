@@ -1,7 +1,15 @@
+// Styling imports
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styled';
+
+// Router imports
+
 import { HashRouter as Router, Route } from 'react-router-dom';
+
+// Components
+
 import MainPage from './page1/MainPage';
 import CreateFilter from './page5/CreateFilter';
 import Explore from './page3/Explore';
@@ -9,10 +17,14 @@ import Account from './page4/Account';
 import FooterBig from './FooterBig';
 import Search from './page3/Search';
 import Manga from './Manga';
+
+// Redux Imports
+
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+
 document.body.style = 'background: #ffc000;';
 
 // Save/Load Mangas and Filter

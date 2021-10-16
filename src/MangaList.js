@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { loadManga } from './actions';
 
-import { queryForManga } from './firebase/firebase';
-
-import { onSnapshot, collection } from 'firebase/firestore';
-
 function MangaList() {
 	const dispatch = useDispatch();
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar1 from '../Navbar1';
 import NavbarExplore from './NavbarExplore';
-import MANGADATA from './MANGADATA.json';
 import MangaList from '../MangaList';
 import Manga from '../Manga';
 

@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app';
 import {
-	initializeFirestore,
-	CACHE_SIZE_UNLIMITED,
 	getFirestore,
 	doc,
 	setDoc,

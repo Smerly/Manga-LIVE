@@ -1,7 +1,5 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Alert, Breadcrumb, Cart, Card } from 'react-bootstrap';
-import styled from 'styled-components';
 import './styled';
 import { NavLink } from 'react-router-dom';
 import Login from './Login';

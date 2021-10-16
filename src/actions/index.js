@@ -29,49 +29,6 @@ export const SET_MALE = 'SET_MALE';
 export const SET_FEMALE = 'SET_FEMALE';
 export const SET_BOTH = 'SET_BOTH';
 
-// Creating Manga
-
-export const addManga = (
-	title,
-	genre,
-	genre2,
-	summary,
-	pic,
-	description,
-	pages,
-	author,
-	artist
-) => {
-	return {
-		type: ADD_MANGA,
-		payload: {
-			title,
-			genre,
-			genre2,
-			summary,
-			pic,
-			description,
-			pages,
-			author,
-			artist,
-		},
-	};
-};
-
-export const removeManga = (index) => {
-	return {
-		type: REMOVE_MANGA,
-		payload: { index },
-	};
-};
-
-export const EditManga = (title, pic, description, pages) => {
-	return {
-		type: ADD_MANGA,
-		payload: { title, pic, description, pages },
-	};
-};
-
 // Load Manga
 
 export const loadManga = () => {

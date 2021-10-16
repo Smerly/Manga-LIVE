@@ -3,7 +3,6 @@ import Hero from './Hero';
 import MindofReader from './MindofReader';
 import Tops from './Tops';
 import Navbar1 from '../Navbar1';
-import Create from '../page2/Create';
 import '../App.css';
 function MainPage() {
 	return (

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addManga } from './actions';
 import Navbar1 from './Navbar1';
 import { useSelector } from 'react-redux';
 import {
@@ -26,14 +25,7 @@ import {
 } from './actions';
 import { NavLink } from 'react-router-dom';
 
-import {
-	writeManga,
-	addNewManga,
-	readSingleManga,
-	listenToManga,
-	cancelMyListenerAtAppropriateTime,
-	queryForManga,
-} from './firebase/firebase';
+import { addNewManga } from './firebase/firebase';
 function Manga() {
 	const dispatch = useDispatch();
 	const {
@@ -68,33 +60,6 @@ function Manga() {
 	const [page, setPage] = useState('3');
 	const [author, setAuthor] = useState('');
 	const [artist, setArtist] = useState('');
-
-	// if (true) {
-	// writeManga(
-	// 	'some title',
-	// 	'some genre',
-	// 	'some second genre',
-	// 	'some summary',
-	// 	'some pic',
-	// 	'some description',
-	// 	'some amount of pages',
-	// 	'some author',
-	// 	'some artist'
-	// );
-
-	// addNewManga(
-	// 	'some title',
-	// 	'some genre',
-	// 	'some second genre',
-	// 	'some summarylol',
-	// 	'some pic',
-	// 	'some description',
-	// 	'some amount of pages',
-	// 	'some author',
-	// 	'some artist'
-	// );
-	// console.log('done!');
-	// }
 
 	return (
 		<div className="bg-gray" style={{ minHeight: 700 }}>

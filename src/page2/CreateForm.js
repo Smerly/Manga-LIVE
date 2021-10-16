@@ -221,14 +221,6 @@ function Create(props) {
 									className="toggle col-sm"
 									id="t8"
 								/>
-								{/* <a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
-									<label for="t8" className="cursor">
-										Other{' '}
-									</label>
-								</a> */}
 							</div>
 						</div>
 					</div>

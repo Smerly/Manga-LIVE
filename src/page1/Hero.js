@@ -1,6 +1,4 @@
 import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-// import Cover from '../images/CoverForManga.png';
 import '../App.css';
 import Carouselimg from './Carousel';
 
@@ -11,11 +9,6 @@ function Hero() {
 				<div className="jumbotron jumbotron-fluid herocustom p-5 d-flex justify-content-center">
 					<div className="container d-flex justify-content-center">
 						<div className="row">
-							{/* <img
-								src={Cover}
-								className="img-fluid mx-auto images-hero"
-								alt="Example of Successful Manga"
-							/> */}
 							<Carouselimg />
 						</div>
 					</div>
