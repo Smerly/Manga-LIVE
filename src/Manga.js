@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Navbar1 from './Navbar1';
 import { useSelector } from 'react-redux';
+import { auth } from './firebase/firebase';
 import {
 	setOwn,
 	setHelp,
@@ -27,30 +28,42 @@ import { NavLink } from 'react-router-dom';
 
 import { addNewManga } from './firebase/firebase';
 function Manga() {
+	const getUsername = () => {
+		if (auth.currentUser) {
+			const name = auth.currentUser.email.replace(/@.*$/, '');
+			return name;
+		} else {
+			return 'No User';
+		}
+	};
+	console.log(getUsername());
 	const dispatch = useDispatch();
-	const {
-		own,
-		help,
-		manga,
-		voice,
-		translate,
-		program,
-		write,
-		other,
-		english,
-		chinese,
-		korean,
-		japanese,
-		spanish,
-		french,
-		indonesia,
-		thai,
-		male,
-		female,
-		both,
-	} = useSelector((state) => {
-		return state.filters;
-	});
+	// const {
+	// 	own,
+	// 	help,
+	// 	manga,
+	// 	voice,
+	// 	translate,
+	// 	program,
+	// 	write,
+	// 	other,
+	// 	english,
+	// 	chinese,
+	// 	korean,
+	// 	japanese,
+	// 	spanish,
+	// 	french,
+	// 	indonesia,
+	// 	thai,
+	// 	male,
+	// 	female,
+	// 	both,
+	// } = useSelector((state) => {
+	// 	return state.filters;
+	// });
+	const temp = useSelector((state) => state.filters);
+
+	console.log(temp);
 	const [title, setTitle] = useState('');
 	const [genre, setGenre] = useState('');
 	const [genre2, setGenre2] = useState('');

@@ -71,6 +71,9 @@ function App() {
 					<Route path="/account" component={Account} />
 					<Route path="/search" component={Search} />
 					<Route path="/mangacreating" component={Manga} />
+					{/* {() => {
+						for ()
+					}} */}
 				</Router>
 				<FooterBig />
 			</div>

@@ -11,6 +11,7 @@ function MangaList() {
 
 	const [search, setSearch] = useState('');
 	const mangas = useSelector((state) => state.mangas);
+	console.log(mangas);
 
 	const MangaList = mangas
 		.filter((val) => {
@@ -21,9 +22,7 @@ function MangaList() {
 			}
 		})
 		.map((manga, index) => {
-			// console.log(manga);
-			console.log(manga[1].title);
-			console.log('4:26 pm');
+			// console.log(manga[1].title);
 
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>

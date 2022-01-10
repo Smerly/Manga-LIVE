@@ -2,7 +2,8 @@ import React from 'react';
 import Navbar2 from '../Navbar2';
 import '../App.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../firebase/firebase';
 import {
 	setOwn,
 	setHelp,
@@ -51,6 +52,15 @@ function Create(props) {
 	} = useSelector((state) => state.filters);
 	const handleSubmit = (e) => {
 		e.preventDefault();
+	};
+	const history = useHistory();
+
+	const handleMakePost = () => {
+		if (auth.currentUser) {
+			history.push('/mangacreating');
+		} else {
+			alert('You have to login to make posts.');
+		}
 	};
 
 	return (
@@ -411,7 +421,11 @@ function Create(props) {
 									</div>
 								</div>
 							</div>
-							<Link to={`/mangacreating`}>
+
+							<Link
+								// to={`/mangacreating`}
+								onClick={handleMakePost}
+							>
 								<input
 									type="submit"
 									value="Done"

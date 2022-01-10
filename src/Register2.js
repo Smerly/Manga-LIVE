@@ -1,47 +1,47 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Modal from 'react-bootstrap/Modal';
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase/firebase';
 
-import './App.css';
-
-function Login() {
-	const history = useHistory();
+function Register2() {
 	const [show, setShow] = useState(false);
+	const history = useHistory();
 
 	// Auth vars
 
-	const [loginEmail, setLoginEmail] = useState('');
-	const [loginPassword, setLoginPassword] = useState('');
+	const [registerEmail, setRegisterEmail] = useState('');
+	const [registerPassword, setRegisterPassword] = useState('');
+
 	const handleModal = () => {
 		setShow(!show);
 	};
 
-	const login = async () => {
+	const register = async () => {
 		try {
-			const user = await signInWithEmailAndPassword(
+			const user = await createUserWithEmailAndPassword(
 				auth,
-				loginEmail,
-				loginPassword
+				registerEmail,
+				registerPassword
 			);
 			console.log(user);
 		} catch (error) {
 			console.log(error.message);
+			alert('That is not a real email!');
 		}
 	};
 
 	return (
-		<div className="nav-link" style={{ alignSelf: 'center' }}>
+		<div className="nav-link">
 			<button
-				className="buttoncustom font-weight-bold"
-				style={{ outline: 'none' }}
+				className="buttoncustom3 font-weight-bold"
+				style={{ outline: 'none', width: 95 }}
 				onClick={() => {
 					handleModal();
 				}}
 			>
 				{' '}
-				Login
+				Register
 			</button>
 			<Modal show={show} onHide={() => handleModal()}>
 				<Modal.Header
@@ -66,7 +66,7 @@ function Login() {
 							fontWeight: 700,
 						}}
 					>
-						Login:
+						Register:
 					</h2>
 
 					<div className="container">
@@ -83,7 +83,7 @@ function Login() {
 									outline: 'none',
 								}}
 								onChange={(e) => {
-									setLoginEmail(e.target.value);
+									setRegisterEmail(e.target.value);
 								}}
 							/>
 
@@ -99,7 +99,7 @@ function Login() {
 									outline: 'none',
 								}}
 								onChange={(e) => {
-									setLoginPassword(e.target.value);
+									setRegisterPassword(e.target.value);
 								}}
 							/>
 							<div>
@@ -108,12 +108,12 @@ function Login() {
 									className="buttoncustom3 font-weight-bold mt-3"
 									style={{ outline: 'none' }}
 									onClick={() => {
-										login();
+										register();
 										history.push('/');
 										handleModal();
 									}}
 								>
-									Login
+									Register
 								</button>
 								<label>
 									<input
@@ -158,4 +158,4 @@ function Login() {
 	);
 }
 
-export default Login;
+export default Register2;
