@@ -142,35 +142,3 @@ export async function queryForManga() {
 //
 
 export const auth = getAuth(app);
-
-// service cloud.firestore {
-// 	match /databases/{database}/documents {
-// 	  match /stories/{story} {
-// 		 function isSignedIn() {
-// 		   return request.auth != null;
-// 		 }
-
-// 		 function getRole(rsc) {
-// 		   // Read from the "roles" map in the resource (rsc).
-// 		   return rsc.data.roles[request.auth.uid];
-// 		 }
-
-// 		 function isOneOfRoles(rsc, array) {
-// 		   // Determine if the user is one of an array of roles
-// 		   return isSignedIn() && (getRole(rsc) in array);
-// 		 }
-
-// 		 function isValidNewStory() {
-// 		   // Valid if story does not exist and the new story has the correct owner.
-// 		   return resource == null && isOneOfRoles(request.resource, ['owner']);
-// 		 }
-
-// 		 // Owners can read, write, and delete stories
-// 		 allow write: if isValidNewStory() || isOneOfRoles(resource, ['owner']);
-
-// 		  match /comments/{comment} {
-// 			 // ...
-// 		  }
-// 	  }
-// 	}
-//  }

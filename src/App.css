@@ -68,6 +68,12 @@ body {
 	height: 20px;
 }
 
+.alert-heading {
+	color: rgb(153, 153, 153) !important;
+	font-size: 15px;
+	margin: 10px;
+}
+
 .buttoncustom {
 	color: #ffc000;
 	background-color: white;
