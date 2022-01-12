@@ -1,9 +1,58 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styled';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Login2 from './Login2';
+import Register2 from './Register2';
+import { auth } from './firebase/firebase';
 function Navbar2() {
+	const [user, setUser] = useState({});
+
+	const logout = async () => {
+		await signOut(auth);
+	};
+
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+	});
+	const handleUser = () => {
+		if (!user) {
+			return (
+				<div className="row">
+					<li className="nav-item pl-3 pr-3">
+						{/* <a href="#" className="nav-link">
+			<button className="buttoncustom font-weight-bold">
+				Login
+			</button>
+		</a> */}
+
+						<Login2 />
+					</li>
+
+					<li className="nav-item pl-1 pr-5">
+						{/* <a href="#" className="nav-link">
+			<button className="buttoncustom font-weight-bold">
+				Login
+			</button>
+		</a> */}
+
+						<Register2 />
+					</li>
+				</div>
+			);
+		} else if (user) {
+			return (
+				<div className="row">
+					<div>
+						Welcome back,
+						<header>{user.email}</header>
+					</div>
+				</div>
+			);
+		}
+	};
 	return (
 		<div className="Navbar2">
 			<section>
@@ -66,14 +115,24 @@ function Navbar2() {
 										How to
 									</a>
 								</li>
-								<li className="nav-item pl-2 pr-3">
-									{/* <a href="#" className="nav-link">
-										<button className="buttoncustom3 font-weight-bold">
-											Login
+								{handleUser()}
+
+								{user ? (
+									<li
+										className="nav-item pl-3 pr-3"
+										style={{ alignSelf: 'center' }}
+									>
+										<button
+											onClick={logout}
+											className="buttoncustom3 font-weight-bold"
+										>
+											{' '}
+											Log out
 										</button>
-									</a> */}
-									<Login2 />
-								</li>
+									</li>
+								) : (
+									''
+								)}
 
 								<div className="separation-line mt-3"></div>
 

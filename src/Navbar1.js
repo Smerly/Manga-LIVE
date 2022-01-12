@@ -1,9 +1,68 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styled';
-import { NavLink } from 'react-router-dom';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import Login from './Login';
+import Register from './Register';
+import { auth } from './firebase/firebase';
 function Navbar1() {
+	const [user, setUser] = useState({});
+	const history = useHistory();
+
+	const logout = async () => {
+		await signOut(auth);
+	};
+
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+	});
+	const handleUser = () => {
+		if (!user) {
+			return (
+				<div className="row">
+					<li className="nav-item pl-3 pr-3">
+						{/* <a href="#" className="nav-link">
+			<button className="buttoncustom font-weight-bold">
+				Login
+			</button>
+		</a> */}
+
+						<Login />
+					</li>
+
+					<li className="nav-item pl-1 pr-5">
+						{/* <a href="#" className="nav-link">
+			<button className="buttoncustom font-weight-bold">
+				Login
+			</button>
+		</a> */}
+
+						<Register />
+					</li>
+				</div>
+			);
+		} else if (user) {
+			return (
+				<div className="row">
+					<li className="nav-item pl-3 pr-3">
+						<div>
+							Welcome back,
+							<header>{user.email}</header>
+						</div>
+					</li>
+					{/* <li className="nav-item pl-3 pr-3" style={{ alignSelf: 'center' }}>
+						<button onClick={logout} className="buttoncustom font-weight-bold">
+							{' '}
+							Log out
+						</button>
+					</li> */}
+				</div>
+			);
+		}
+	};
+	// console.log(auth.currentUser);
 	return (
 		<div className="Navbar1">
 			<section>
@@ -67,15 +126,28 @@ function Navbar1() {
 										How to
 									</a>
 								</li>
-								<li className="nav-item pl-2 pr-3">
-									{/* <a href="#" className="nav-link">
-										<button className="buttoncustom font-weight-bold">
-											Login
-										</button>
-									</a> */}
 
-									<Login />
-								</li>
+								{handleUser()}
+
+								{user ? (
+									<li
+										className="nav-item pl-3 pr-3"
+										style={{ alignSelf: 'center' }}
+									>
+										<button
+											onClick={() => {
+												logout();
+												history.push('/');
+											}}
+											className="buttoncustom font-weight-bold"
+										>
+											{' '}
+											Log out
+										</button>
+									</li>
+								) : (
+									''
+								)}
 
 								<div className="separation-line mt-3"></div>
 
