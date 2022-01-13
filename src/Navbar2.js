@@ -3,11 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styled';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Login2 from './Login2';
 import Register2 from './Register2';
 import { auth } from './firebase/firebase';
 function Navbar2() {
+	const history = useHistory();
 	const [user, setUser] = useState({});
 
 	const logout = async () => {
@@ -106,11 +107,11 @@ function Navbar2() {
 						</ul>
 						<ul className="navbar-nav">
 							<div className="row">
-								<li className="nav-item pl-2 mx-4 mt-1">
+								<li className="nav-item pl-2 mx-4 mr-5 mt-1">
 									<a
 										href="#"
-										className="customlink2 nav-link"
-										style={{ color: 'gray' }}
+										className="customlink2 nav-link text-secondary"
+										style={{ color: 'gray', fontWeight: 700 }}
 									>
 										How to
 									</a>
@@ -119,11 +120,14 @@ function Navbar2() {
 
 								{user ? (
 									<li
-										className="nav-item pl-3 pr-3"
+										className="nav-item pl-4 pr-3"
 										style={{ alignSelf: 'center' }}
 									>
 										<button
-											onClick={logout}
+											onClick={() => {
+												logout();
+												history.push('/');
+											}}
 											className="buttoncustom3 font-weight-bold"
 										>
 											{' '}

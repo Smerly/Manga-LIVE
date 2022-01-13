@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Navbar1 from './Navbar1';
 import { useSelector } from 'react-redux';
 import { auth } from './firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 import {
 	setOwn,
 	setHelp,
@@ -28,15 +29,19 @@ import { NavLink } from 'react-router-dom';
 
 import { addNewManga } from './firebase/firebase';
 function Manga() {
-	const getUsername = () => {
-		if (auth.currentUser) {
-			const name = auth.currentUser.email.replace(/@.*$/, '');
-			return name;
-		} else {
-			return 'No User';
+	const [user, setUser] = useState({});
+	const [username, setUserName] = useState('');
+
+	onAuthStateChanged(auth, (currentUser) => {
+		setUser(currentUser);
+		if (user.email !== undefined && user.email) {
+			const name = user.email.replace(/@.*$/, '');
+			if (name !== '') {
+				setUserName(name);
+			}
 		}
-	};
-	console.log(getUsername());
+	});
+
 	const dispatch = useDispatch();
 	// const {
 	// 	own,
@@ -61,9 +66,9 @@ function Manga() {
 	// } = useSelector((state) => {
 	// 	return state.filters;
 	// });
+
 	const temp = useSelector((state) => state.filters);
 
-	console.log(temp);
 	const [title, setTitle] = useState('');
 	const [genre, setGenre] = useState('');
 	const [genre2, setGenre2] = useState('');
@@ -73,6 +78,13 @@ function Manga() {
 	const [page, setPage] = useState('3');
 	const [author, setAuthor] = useState('');
 	const [artist, setArtist] = useState('');
+	const getTheAuthor = () => {
+		if (author === '') {
+			return username;
+		} else {
+			return author;
+		}
+	};
 
 	return (
 		<div className="bg-gray" style={{ minHeight: 700 }}>
@@ -92,7 +104,6 @@ function Manga() {
 							{' '}
 							Title
 						</label>
-						{title}
 						<input
 							type="text"
 							onChange={(e) => {
@@ -123,6 +134,7 @@ function Manga() {
 							>
 								Author
 							</label>
+
 							<input
 								onChange={(e) => {
 									if (author.length <= 20) {
@@ -133,8 +145,13 @@ function Manga() {
 								maxLength="20"
 								value={author}
 								style={{ marginRight: 80 }}
-								placeholder="Who wrote the story?"
+								placeholder={`${username}?`}
 							/>
+
+							<header className="alert-heading">
+								If left blank, the author will default to {username}{' '}
+								{getTheAuthor}
+							</header>
 						</div>
 						<div>
 							<label
@@ -146,7 +163,7 @@ function Manga() {
 									marginLeft: 10,
 								}}
 							>
-								Artist {artist}
+								Artist
 							</label>
 							<input
 								onChange={(e) => {
@@ -284,7 +301,8 @@ function Manga() {
 								pic,
 								description,
 								page,
-								author,
+								getTheAuthor(),
+								// author,
 								artist
 							);
 						}}
