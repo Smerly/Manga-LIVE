@@ -29,42 +29,33 @@ function MangaList() {
 				<li key={index} style={{ listStyleType: 'none' }}>
 					<div className="card m-2 mb-3 listbox">
 						<Link
-							className="column p-2"
+							className="column p-3"
 							style={{
 								width: '15rem',
 								height: '15rem',
 								background: 'none',
 								border: 'none',
+								display: 'flex',
+								flexWrap: 'wrap',
+								flexDirection: 'column',
+								textDecoration: 'none',
 							}}
 							to={`/posts/${manga[1].slug}`}
 						>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
+							<h2 className="mb-2" style={{ color: 'black' }}>
 								<h3>{manga[1].title}</h3>
+							</h2>
+							<div className="mb-3" style={{ color: '#ffc000' }}>
+								By: {manga[1].author}
 							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Author By: {manga[1].author}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								Art by: {manga[1].artist}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								genre: {manga[1].genre}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								genre2: {manga[1].genre2}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								summary: {manga[1].summary}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								pic: {manga[1].pic}
-							</div>
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								desc: {manga[1].description}
-							</div>
-
-							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								page: {manga[1].page}
+							<h4 style={{ color: 'black' }}> Genre </h4>
+							<div className="row pl-3 mt-3">
+								<div className="mb-2 mr-3" style={{ color: 'black' }}>
+									{manga[1].genre}
+								</div>
+								<div className="mb-2" style={{ color: 'black' }}>
+									{manga[1].genre2}
+								</div>
 							</div>
 
 							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>

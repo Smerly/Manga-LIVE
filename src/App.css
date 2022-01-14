@@ -321,3 +321,9 @@ a.customlink4 {
 	display: flex;
 	flex-direction: column;
 }
+
+@media only screen and (max-width: 900px) {
+	.img-resp {
+		align-self: center;
+	}
+}

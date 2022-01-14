@@ -26,11 +26,9 @@ function Account() {
 								<div className="column m-2">
 									<h1 className="col-sm font">Naniderawr537</h1>
 									<header className="ml-3 font">
-										Roles: Illustrator, Writer, Programmer
+										Roles: Illustrator, Writer
 									</header>
-									<header className="ml-3 mt-4 font">
-										Email: Naniderawr537@gmail.com
-									</header>
+									<header className="ml-3 mt-4 font">Email:</header>
 									<header className="ml-3 font">Account #: 1233418</header>
 								</div>
 							</div>
@@ -44,11 +42,18 @@ function Account() {
 								About me
 							</h1>
 							<p className="mt-5 font">
-								Hi! I am Naniderawr537. I am an anime/manga artist. I also know
+								{/* Hi! I am Naniderawr537. I am an anime/manga artist. I also know
 								front end languages like HTML, CSS, JS, and extensions like
 								Bootstrap and React. If you are interested in hiring me, I will
 								be $25 per page of manga(may vary) and $5 per feature added to
-								your manga or comic! I look forward to collaborating with you!
+								your manga or comic! I look forward to collaborating with you! */}
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+								enim ad minim veniam, quis nostrud exercitation ullamco laboris
+								nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+								in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+								nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+								sunt in culpa qui officia deserunt mollit anim id est laborum.
 							</p>
 							<h1 className="font my-5 py-5" style={{ color: '#ffc000' }}>
 								Works Contributed

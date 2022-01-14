@@ -65,7 +65,7 @@ function Navbar1() {
 	// console.log(auth.currentUser);
 	return (
 		<div className="Navbar1">
-			<section>
+			<section style={{ backgroundColor: 'white' }}>
 				<nav className="navbarcustom navbar navbar-expand-sm navbar-light">
 					<NavLink
 						to={`/`}

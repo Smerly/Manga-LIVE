@@ -29,8 +29,11 @@ import {
 import { NavLink } from 'react-router-dom';
 
 import { addNewManga } from './firebase/firebase';
+
 function Manga() {
 	const history = useHistory();
+	const temp = useSelector((state) => state.filters);
+	const mangas = useSelector((state) => state.mangas);
 	const [user, setUser] = useState({});
 	const [username, setUserName] = useState('');
 
@@ -43,6 +46,13 @@ function Manga() {
 			}
 		}
 	});
+
+	const emptyArr = [];
+
+	mangas.forEach((m) => {
+		emptyArr.push();
+	});
+	console.log(mangas);
 
 	const dispatch = useDispatch();
 	// const {
@@ -68,8 +78,6 @@ function Manga() {
 	// } = useSelector((state) => {
 	// 	return state.filters;
 	// });
-
-	const temp = useSelector((state) => state.filters);
 
 	const [title, setTitle] = useState('');
 	const [genre, setGenre] = useState('');
@@ -313,7 +321,8 @@ function Manga() {
 								pic &&
 								description &&
 								page &&
-								artist
+								artist &&
+								title
 							) {
 								addNewManga(
 									title, // title
