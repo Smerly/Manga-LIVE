@@ -144,7 +144,7 @@ function Navbar2() {
 									<form className="form-inline" action="/action_page.php">
 										<input
 											type="search"
-											placeholder="Search"
+											placeholder="Search (WIP)"
 											className="mr-sm-2 pl-3 mt-2 ml-3 search2"
 										/>
 									</form>

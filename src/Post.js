@@ -15,6 +15,7 @@ function Post() {
 	});
 	const postsPage = () => {
 		if (manga) {
+			// console.log(manga.pic);
 			return (
 				<div>
 					<Navbar1 />
@@ -35,7 +36,7 @@ function Post() {
 							>
 								<div className="row">
 									<img
-										src=""
+										src="#"
 										placeholder="Cover of Manga"
 										height="200px"
 										width="200px"
