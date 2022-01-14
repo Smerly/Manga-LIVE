@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Manga-LIVE/static/css/main.ea4e9c2c.chunk.css",
-    "main.js": "/Manga-LIVE/static/js/main.6d64a76f.chunk.js",
-    "main.js.map": "/Manga-LIVE/static/js/main.6d64a76f.chunk.js.map",
+    "main.css": "/Manga-LIVE/static/css/main.d3bad170.chunk.css",
+    "main.js": "/Manga-LIVE/static/js/main.28cc442e.chunk.js",
+    "main.js.map": "/Manga-LIVE/static/js/main.28cc442e.chunk.js.map",
     "runtime-main.js": "/Manga-LIVE/static/js/runtime-main.8ce9dc1d.js",
     "runtime-main.js.map": "/Manga-LIVE/static/js/runtime-main.8ce9dc1d.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Manga-LIVE/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.818031a7.chunk.js": "/Manga-LIVE/static/js/2.818031a7.chunk.js",
-    "static/js/2.818031a7.chunk.js.map": "/Manga-LIVE/static/js/2.818031a7.chunk.js.map",
+    "static/js/2.cd9eb173.chunk.js": "/Manga-LIVE/static/js/2.cd9eb173.chunk.js",
+    "static/js/2.cd9eb173.chunk.js.map": "/Manga-LIVE/static/js/2.cd9eb173.chunk.js.map",
     "static/js/3.763ee9a1.chunk.js": "/Manga-LIVE/static/js/3.763ee9a1.chunk.js",
     "static/js/3.763ee9a1.chunk.js.map": "/Manga-LIVE/static/js/3.763ee9a1.chunk.js.map",
     "index.html": "/Manga-LIVE/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/Manga-LIVE/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.ea4e9c2c.chunk.css.map": "/Manga-LIVE/static/css/main.ea4e9c2c.chunk.css.map",
-    "static/js/2.818031a7.chunk.js.LICENSE.txt": "/Manga-LIVE/static/js/2.818031a7.chunk.js.LICENSE.txt",
+    "static/css/main.d3bad170.chunk.css.map": "/Manga-LIVE/static/css/main.d3bad170.chunk.css.map",
+    "static/js/2.cd9eb173.chunk.js.LICENSE.txt": "/Manga-LIVE/static/js/2.cd9eb173.chunk.js.LICENSE.txt",
     "static/media/CoverForManga.1f97f43d.png": "/Manga-LIVE/static/media/CoverForManga.1f97f43d.png",
     "static/media/App.css": "/Manga-LIVE/static/media/line.9570f029.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8ce9dc1d.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.818031a7.chunk.js",
-    "static/css/main.ea4e9c2c.chunk.css",
-    "static/js/main.6d64a76f.chunk.js"
+    "static/js/2.cd9eb173.chunk.js",
+    "static/css/main.d3bad170.chunk.css",
+    "static/js/main.28cc442e.chunk.js"
   ]
 }
