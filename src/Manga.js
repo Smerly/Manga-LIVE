@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Navbar1 from './Navbar1';
 import { useSelector } from 'react-redux';
@@ -29,6 +30,7 @@ import { NavLink } from 'react-router-dom';
 
 import { addNewManga } from './firebase/firebase';
 function Manga() {
+	const history = useHistory();
 	const [user, setUser] = useState({});
 	const [username, setUserName] = useState('');
 
@@ -75,7 +77,7 @@ function Manga() {
 	const [summary, setSummary] = useState('');
 	const [pic, setPic] = useState('Some Pic');
 	const [description, setDescription] = useState('');
-	const [page, setPage] = useState('3');
+	const [page, setPage] = useState('0');
 	const [author, setAuthor] = useState('');
 	const [artist, setArtist] = useState('');
 	const getTheAuthor = () => {
@@ -83,6 +85,17 @@ function Manga() {
 			return username;
 		} else {
 			return author;
+		}
+	};
+
+	const getSlug = () => {
+		if (title) {
+			const slug = title.replace(/\W+()/g, (match, chr) => {
+				return '-';
+			});
+			return slug;
+		} else {
+			return '';
 		}
 	};
 
@@ -280,8 +293,7 @@ function Manga() {
 						style={{ justifySelf: 'center', alignSelf: 'center' }}
 						className="mt-5 buttoncustom2 mb-5"
 					> */}
-					<NavLink
-						to={`search`}
+					<button
 						type="submit"
 						className="mt-5 buttoncustom2 mb-5"
 						style={{
@@ -293,23 +305,38 @@ function Manga() {
 							alignItems: 'center',
 						}}
 						onClick={(e) => {
-							addNewManga(
-								title,
-								genre,
-								genre2,
-								summary,
-								pic,
-								description,
-								page,
-								getTheAuthor(),
-								// author,
+							if (
+								title &&
+								genre &&
+								genre2 &&
+								summary &&
+								pic &&
+								description &&
+								page &&
 								artist
-							);
+							) {
+								addNewManga(
+									title, // title
+									genre, // genre
+									genre2, // genre2
+									summary, // summary
+									pic, // manga cover art
+									description, // description
+									page, // amount of pages
+									getTheAuthor(), // Author
+									artist, // artist
+									getSlug(), // slug
+									[] // an array of files of all their individual manga pages
+								);
+								history.push('/search');
+							} else {
+								alert('Please enter in all fields');
+							}
 						}}
 					>
 						{' '}
 						Submit{' '}
-					</NavLink>
+					</button>
 					{/* </button> */}
 				</form>
 			</div>

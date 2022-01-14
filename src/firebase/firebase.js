@@ -37,7 +37,9 @@ export async function writeManga(
 	descriptionIn,
 	pageIn,
 	authorIn,
-	artistIn
+	artistIn,
+	slugIn,
+	allPagesIn
 ) {
 	const docData = {
 		title: titleIn,
@@ -49,6 +51,8 @@ export async function writeManga(
 		page: pageIn,
 		author: authorIn,
 		artist: artistIn,
+		slug: slugIn,
+		allPages: allPagesIn,
 	};
 
 	try {
@@ -72,7 +76,9 @@ export async function addNewManga(
 	descriptionIn,
 	pageIn,
 	authorIn,
-	artistIn
+	artistIn,
+	slug,
+	allPages
 ) {
 	const newDoc = await addDoc(mangaCollection, {
 		title: titleIn,
@@ -84,6 +90,8 @@ export async function addNewManga(
 		page: pageIn,
 		author: authorIn,
 		artist: artistIn,
+		slug: slug,
+		allPages: allPages,
 	});
 
 	console.log(`your doc was created at ${newDoc.path}`);

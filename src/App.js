@@ -17,6 +17,7 @@ import Account from './page4/Account';
 import FooterBig from './FooterBig';
 import Search from './page3/Search';
 import Manga from './Manga';
+import Post from './Post';
 
 // Redux Imports
 
@@ -71,9 +72,7 @@ function App() {
 					<Route path="/account" component={Account} />
 					<Route path="/search" component={Search} />
 					<Route path="/mangacreating" component={Manga} />
-					{/* {() => {
-						for ()
-					}} */}
+					<Route path="/posts/:slug" component={Post} />
 				</Router>
 				<FooterBig />
 			</div>

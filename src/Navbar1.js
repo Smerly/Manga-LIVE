@@ -87,7 +87,7 @@ function Navbar1() {
 									<NavLink
 										className="customlink font-weight-bold nav-link mx-3"
 										whileHover={{ color: 'black' }}
-										to={`create`}
+										to={`/create`}
 									>
 										Create
 									</NavLink>
@@ -106,7 +106,7 @@ function Navbar1() {
 										href="account.html"
 										className="customlink font-weight-bold nav-link mx-3"
 										exact
-										to={`Account`}
+										to={`/Account`}
 									>
 										Account
 									</NavLink>

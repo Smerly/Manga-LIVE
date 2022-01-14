@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loadManga } from './actions';
 
 function MangaList() {
@@ -11,7 +12,7 @@ function MangaList() {
 
 	const [search, setSearch] = useState('');
 	const mangas = useSelector((state) => state.mangas);
-	console.log(mangas);
+	// console.log(mangas);
 
 	const MangaList = mangas
 		.filter((val) => {
@@ -22,12 +23,12 @@ function MangaList() {
 			}
 		})
 		.map((manga, index) => {
-			// console.log(manga[1].title);
+			console.log(manga);
 
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>
 					<div className="card m-2 mb-3 listbox">
-						<button
+						<Link
 							className="column p-2"
 							style={{
 								width: '15rem',
@@ -35,20 +36,41 @@ function MangaList() {
 								background: 'none',
 								border: 'none',
 							}}
+							to={`/posts/${manga[1].slug}`}
 						>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
 								<h3>{manga[1].title}</h3>
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
-								By: {manga[1].author}
+								Author By: {manga[1].author}
 							</div>
 							<div className="col-sm mb-2" style={{ color: 'black' }}>
 								Art by: {manga[1].artist}
 							</div>
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								genre: {manga[1].genre}
+							</div>
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								genre2: {manga[1].genre2}
+							</div>
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								summary: {manga[1].summary}
+							</div>
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								pic: {manga[1].pic}
+							</div>
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								desc: {manga[1].description}
+							</div>
+
+							<div className="col-sm mb-2" style={{ color: 'black' }}>
+								page: {manga[1].page}
+							</div>
+
 							{/* <div className="col-sm mb-2" style={{ color: 'black' }}>
 								Chapters: {mangaLayer2[1].pages}
 							</div> */}
-						</button>
+						</Link>
 					</div>
 				</li>
 			);
