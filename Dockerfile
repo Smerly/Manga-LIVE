@@ -9,6 +9,7 @@ RUN npm run build
 CMD ["npm", "start"]
 
 
+
 # FROM nginx:1.13.9-alpine
 # RUN rm -rf /etc/nginx/conf.d
 # RUN mkdir -p /etc/nginx/conf.d
