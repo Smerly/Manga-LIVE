@@ -13,6 +13,20 @@ function Post() {
 			manga = m[1];
 		}
 	});
+	console.log(manga.title);
+
+	const titleResp = () => {
+		const man = manga.title;
+		console.log(`this${man}`);
+		if (man.length <= 10) {
+			return 'responsive-large-title';
+		} else if (man.length <= 20) {
+			return 'responsive-medium-title';
+		} else {
+			return 'responsive-small-title';
+		}
+	};
+	console.log(titleResp());
 	const postsPage = () => {
 		if (manga) {
 			// console.log(manga.pic);
@@ -32,9 +46,17 @@ function Post() {
 						>
 							<div
 								className="col-md-6 mr-3"
-								style={{ display: 'flex', flexDirection: 'column' }}
+								style={{
+									display: 'flex',
+									flexDirection: 'column',
+									justifyContent: 'center',
+									alignItems: 'center',
+								}}
 							>
-								<div className="row">
+								<div
+									className="row"
+									style={{ justifyContent: 'center', alignItems: 'center' }}
+								>
 									<img
 										src="#"
 										placeholder="Cover of Manga"
@@ -51,16 +73,18 @@ function Post() {
 										}}
 									>
 										<h1
-											className="top-header m-3 mb-5"
+											id={titleResp()}
+											className="top-header"
 											style={{
 												width: 250,
-												height: 60,
+												// height: 60,
 												// justifySelf: 'center',
 												textAlign: 'center',
 											}}
 										>
 											{manga.title}
 										</h1>
+
 										<div
 											className="my-2"
 											style={{ borderTop: '1px black solid', width: 50 }}
