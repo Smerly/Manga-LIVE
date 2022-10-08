@@ -9,6 +9,8 @@ Posting feature is implemented with a database!
 
 ## Live Deployed on CapRover
 
+https://mangalive.dev.ernitar.me/#/
+
 Status: https://statuspage.freshping.io/63558-MangaLIVE
 
 ## How to use
