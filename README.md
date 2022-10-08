@@ -5,7 +5,11 @@
 
 WIP | A prototype website for posting manga and collaborating with others to create the highest quality manga possible.
 
-Posting feature is implemented with a database! Posting with chapters is still WIP.
+Posting feature is implemented with a database!
+
+## Live Deployed on CapRover
+
+Status: https://statuspage.freshping.io/63558-MangaLIVE
 
 ## How to use
 
