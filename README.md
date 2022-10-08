@@ -13,6 +13,27 @@ Posting feature is implemented with a database!
 
 Status: [FreshPing Status](https://statuspage.freshping.io/63558-MangaLIVE)
 
+## How to Run Docker Container
+
+Navigate to project directory
+
+```bash
+    cd Manga-LIVE
+```
+
+Build Dockerfile image
+
+```bash
+    docker build . -t mangalive
+```
+
+Create and run Docker container with image
+
+```bash
+    docker run -p 3030:3030 mangalive
+```
+
+
 ## How to use
 
 Since the current WIP version of Manga-LIVE has posting services and the use of a database, you can post!
