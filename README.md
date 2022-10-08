@@ -1,7 +1,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Smerly/Manga-LIVE)
 ![GitHub issues](https://img.shields.io/github/issues/Smerly/Manga-LIVE)
-https://img.shields.io/docker/image-size/Smerly/Manga-LIVE/latest
-
+![Docker Image Size](https://img.shields.io/docker/image-size/Smerly/Manga-LIVE/latest)
 ![Manga-LIVE Logo](https://cdn.discordapp.com/attachments/584882522211483754/899097291644862464/Manga-LIVE2.png)
 
 WIP | A prototype website for posting manga and collaborating with others to create the highest quality manga possible.
