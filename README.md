@@ -5,7 +5,34 @@
 
 WIP | A prototype website for posting manga and collaborating with others to create the highest quality manga possible.
 
-Posting feature is implemented with a database! Posting with chapters is still WIP.
+Posting feature is implemented with a database!
+
+## Live Deployed on CapRover
+
+[Deployed Link](https://mangalive.dev.ernitar.me/#/)
+
+Status: [FreshPing Status](https://statuspage.freshping.io/63558-MangaLIVE)
+
+## How to Run Docker Container
+
+Navigate to project directory
+
+```bash
+cd Manga-LIVE
+```
+
+Build Dockerfile image
+
+```bash
+docker build . -t mangalive
+```
+
+Create and run Docker container with image
+
+```bash
+docker run -p 3030:3030 mangalive
+```
+
 
 ## How to use
 
@@ -38,7 +65,7 @@ Step 2: Navigate to the project directory
 Step 3: Install project dependencies
 
 ```bash
-    npm install
+npm install
 ```
 
 Step 4: Start the project with Npm or Yarn
@@ -46,11 +73,11 @@ Step 4: Start the project with Npm or Yarn
 If yarn:
 
 ```bash
-    yarn start
+yarn start
 ```
 
 If npm:
 
 ```bash
-    npm start
+npm start
 ```
