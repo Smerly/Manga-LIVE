@@ -16,9 +16,20 @@ import {
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+
 import firebaseConfig from './firebaseConfig.js';
 
 const app = initializeApp(firebaseConfig);
+
+// getStorage here is a getter function for Firebase Storage (which is used for storing user's files.)
+// Firebase Storage, like firestore is a hierarchal system.
+
+const storage = getStorage();
+
+// the root reference
+
+const storageRef = ref(storage);
 
 const db = getFirestore(app);
 

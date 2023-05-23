@@ -45,11 +45,16 @@ function Navbar2() {
 			);
 		} else if (user) {
 			return (
-				<div className="row">
-					<div>
-						Welcome back,
-						<header>{user.email}</header>
-					</div>
+				<div className="center">
+					<li className="nav-item pl-3 pr-3">
+						<header style={{ fontWeight: 600 }}>{user.email}</header>
+					</li>
+					{/* <li className="nav-item pl-3 pr-3" style={{ alignSelf: 'center' }}>
+						<button onClick={logout} className="buttoncustom font-weight-bold">
+							{' '}
+							Log out
+						</button>
+					</li> */}
 				</div>
 			);
 		}
@@ -107,20 +112,20 @@ function Navbar2() {
 						</ul>
 						<ul className="navbar-nav">
 							<div className="row">
-								<li className="nav-item pl-2 mx-4 mr-5 mt-1">
+								<li className="nav-item pl-2 mx-4">
 									<a
 										href="#"
 										className="customlink2 nav-link text-secondary"
-										style={{ color: 'gray', fontWeight: 700 }}
+										style={{ color: 'gray', fontWeight: 700, marginTop: 2 }}
 									>
-										How to
+										About MangaLIVE
 									</a>
 								</li>
 								{handleUser()}
 
 								{user ? (
 									<li
-										className="nav-item pl-4 pr-3"
+										className="nav-item pl-3 pr-3"
 										style={{ alignSelf: 'center' }}
 									>
 										<button
@@ -140,7 +145,7 @@ function Navbar2() {
 
 								<div className="separation-line mt-3"></div>
 
-								<li className="nav-item px-2 mr-4">
+								{/* <li className="nav-item px-2 mr-4">
 									<form className="form-inline" action="/action_page.php">
 										<input
 											type="search"
@@ -148,7 +153,7 @@ function Navbar2() {
 											className="mr-sm-2 pl-3 mt-2 ml-3 search2"
 										/>
 									</form>
-								</li>
+								</li> */}
 							</div>
 						</ul>
 					</div>

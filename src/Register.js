@@ -106,7 +106,7 @@ function Register() {
 								<button
 									type="submit"
 									className="buttoncustom3 font-weight-bold mt-3"
-									style={{ outline: 'none' }}
+									style={{ outline: 'none', marginLeft: '2em' }}
 									onClick={() => {
 										register();
 										history.push('/');
@@ -115,7 +115,7 @@ function Register() {
 								>
 									Register
 								</button>
-								{/* <label>
+								<label>
 									<input
 										type="checkbox"
 										checked="checked"
@@ -123,37 +123,11 @@ function Register() {
 										className="ml-5"
 									/>{' '}
 									Remember me
-								</label> */}
+								</label>
 							</div>
-
-							<h3 className="top-header mt-3" style={{ fontWeight: 700 }}>
-								{' '}
-								Or...
-							</h3>
 						</div>
 					</div>
 				</Modal.Body>
-				<Modal.Footer className="d-flex justify-content-center">
-					<div className="column">
-						<h2
-							className="top-header mb-5 pb-2"
-							style={{
-								borderBottom: '1px rgb(141, 141, 141) solid',
-								width: 250,
-								fontWeight: 700,
-							}}
-						>
-							Login with
-						</h2>
-						<div className="row">
-							<a href="#" className="my-2 mx-5 login-socialfb"></a>
-
-							<a href="#" className="my-2 mx-5 login-socialg"></a>
-
-							<a href="#" className="my-2 mx-5 login-sociall"></a>
-						</div>
-					</div>
-				</Modal.Footer>
 			</Modal>
 		</div>
 	);

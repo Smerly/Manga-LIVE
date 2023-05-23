@@ -45,12 +45,9 @@ function Navbar1() {
 			);
 		} else if (user) {
 			return (
-				<div className="row">
+				<div className="center">
 					<li className="nav-item pl-3 pr-3">
-						<div>
-							Welcome back,
-							<header>{user.email}</header>
-						</div>
+						<header style={{ fontWeight: 600 }}>{user.email}</header>
 					</li>
 					{/* <li className="nav-item pl-3 pr-3" style={{ alignSelf: 'center' }}>
 						<button onClick={logout} className="buttoncustom font-weight-bold">
@@ -115,15 +112,15 @@ function Navbar1() {
 						</ul>
 						<ul className="navbar-nav">
 							<div className="row">
-								<li className="nav-item pl-2 mx-4 mt-1">
+								<li className="nav-item pl-2 mx-4">
 									<a
 										href="#"
 										className="customlink nav-link text-secondary"
-										style={{ fontWeight: 700 }}
+										style={{ fontWeight: 700, marginTop: 2 }}
 										exact
 										to="#"
 									>
-										How to
+										About MangaLIVE
 									</a>
 								</li>
 
@@ -151,7 +148,7 @@ function Navbar1() {
 
 								<div className="separation-line mt-3"></div>
 
-								<li className="nav-item px-2 mr-4">
+								{/* <li className="nav-item px-2 mr-4">
 									<form className="form-inline" action="/action_page.php">
 										<input
 											type="search"
@@ -159,7 +156,7 @@ function Navbar1() {
 											className="mr-sm-2 pl-3 mt-2 ml-3 search"
 										/>
 									</form>
-								</li>
+								</li> */}
 							</div>
 						</ul>
 					</div>

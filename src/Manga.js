@@ -33,8 +33,10 @@ import { addNewManga } from './firebase/firebase';
 
 function Manga() {
 	const history = useHistory();
+
 	const temp = useSelector((state) => state.filters);
 	const mangas = useSelector((state) => state.mangas);
+
 	const [user, setUser] = useState({});
 	const [username, setUserName] = useState('');
 	const [title, setTitle] = useState('');
