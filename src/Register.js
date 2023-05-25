@@ -12,9 +12,25 @@ function Register() {
 
 	const [registerEmail, setRegisterEmail] = useState('');
 	const [registerPassword, setRegisterPassword] = useState('');
+	const [submitting, setSubmitting] = useState('');
+	const [formError, setFormError] = useState('');
 
 	const handleModal = () => {
 		setShow(!show);
+	};
+
+	const onFormSubmit = async (e) => {
+		console.log('dono');
+		try {
+			// e.preventDefault();
+			setFormError('');
+			setSubmitting(true);
+		} catch (err) {
+			console.error(err);
+			setFormError(err.toString());
+		} finally {
+			setSubmitting(false);
+		}
 	};
 
 	const register = async () => {
@@ -27,7 +43,13 @@ function Register() {
 			console.log(user);
 		} catch (error) {
 			console.log(error.message);
-			alert('That is not a real email!');
+			if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+				alert('This email has already registered.');
+			} else if (error.message === 'Firebase: Error (auth/invalid-email).') {
+				alert('This is not a valid email.');
+			} else {
+				alert('Hmm, something went wrong. Try again!');
+			}
 		}
 	};
 
@@ -59,10 +81,12 @@ function Register() {
 				</Modal.Header>
 				<Modal.Body style={{ height: 350 }}>
 					<form
-						onSubmit={() => {
-							register();
-							history.push('/');
-							handleModal();
+						onSubmit={(e) => {
+							e.preventDefault();
+							// register();
+							onFormSubmit();
+							// history.push('/');
+							// handleModal();
 						}}
 					>
 						<h2
@@ -116,8 +140,8 @@ function Register() {
 										style={{ outline: 'none', marginLeft: '2em' }}
 										onClick={() => {
 											register();
-											history.push('/');
 											handleModal();
+											history.push('/');
 										}}
 									>
 										Register

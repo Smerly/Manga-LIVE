@@ -12,27 +12,24 @@ function Login2() {
 	const [show, setShow] = useState('');
 	const [loginEmail, setLoginEmail] = useState('');
 	const [loginPassword, setLoginPassword] = useState('');
-
 	const [submitting, setSubmitting] = useState('');
 	const [formError, setFormError] = useState('');
+	const handleModal = () => {
+		setShow(!show);
+	};
 
 	const onFormSubmit = async (e) => {
 		console.log('dono');
 		try {
-			e.preventDefault();
+			// e.preventDefault();
 			setFormError('');
 			setSubmitting(true);
-			await fetch(/*POST email + password*/);
 		} catch (err) {
 			console.error(err);
 			setFormError(err.toString());
 		} finally {
 			setSubmitting(false);
 		}
-	};
-
-	const handleModal = () => {
-		setShow(!show);
 	};
 
 	const login = async () => {
@@ -45,6 +42,7 @@ function Login2() {
 			console.log(user);
 		} catch (error) {
 			console.log(error.message);
+			alert('Failed to log in, please try again.');
 		}
 	};
 
@@ -76,10 +74,12 @@ function Login2() {
 				</Modal.Header>
 				<Modal.Body style={{ height: 350 }}>
 					<form
-						onSubmit={() => {
-							login();
-							history.push('/');
-							handleModal();
+						onSubmit={(e) => {
+							e.preventDefault();
+							// login();
+							onFormSubmit();
+							// handleModal();
+							// history.push('/');
 						}}
 					>
 						<h2
@@ -133,8 +133,9 @@ function Login2() {
 										style={{ outline: 'none', marginLeft: '2em' }}
 										onClick={() => {
 											login();
-											history.push('/');
+											// onFormSubmit();
 											handleModal();
+											history.push('/');
 										}}
 									>
 										Login
