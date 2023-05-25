@@ -402,22 +402,25 @@ a.customlink4 {
   text-align: center;
 }
 
+#responsive-small-title {
+	font-size: 25px;
+	color: red;
+	text-align: center;
+}
+
 #responsive-medium-title {
-  font-size: 30px;
-  color: blue;
-  text-align: center;
+	font-size: 30px;
+	color: blue;
+	text-align: center;
 }
 
 #responsive-large-title {
-  font-size: 40px;
-  color: green;
-  text-align: center;
+	font-size: 40px;
+	color: green;
+	text-align: center;
 }
-
 /* @media only screen and (font) {
 	.responsive-man-title {
 
 	}
 } */
-
-/*# sourceMappingURL=App.css.map */
