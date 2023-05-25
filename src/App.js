@@ -18,7 +18,7 @@ import FooterBig from './FooterBig';
 import Search from './page3/Search';
 import Manga from './Manga';
 import Post from './Post';
-import PlayList from './PlayList';
+import PlayList from './PlayList/PlayList';
 
 // Redux Imports
 

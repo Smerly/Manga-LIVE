@@ -6,6 +6,12 @@ import Manga from '../Manga';
 
 function Search() {
 	const [search, setSearch] = useState('');
+	const [image, setImage] = useState([]);
+
+	// use
+	// 	setImage((image) => [...image, 'hi']);
+	// }, 2000);
+
 	return (
 		<div>
 			<Navbar1 />

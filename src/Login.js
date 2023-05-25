@@ -9,6 +9,23 @@ import './App.css';
 function Login() {
 	const history = useHistory();
 	const [show, setShow] = useState(false);
+	const [submitting, setSubmitting] = useState('');
+	const [formError, setFormError] = useState('');
+	const [logged, setLogged] = useState(false);
+
+	const onFormSubmit = async (e) => {
+		console.log('dono');
+		try {
+			// e.preventDefault();
+			setFormError('');
+			setSubmitting(true);
+		} catch (err) {
+			console.error(err);
+			setFormError(err.toString());
+		} finally {
+			setSubmitting(false);
+		}
+	};
 
 	// Auth vars
 
@@ -25,9 +42,9 @@ function Login() {
 				loginEmail,
 				loginPassword
 			);
-			console.log(user);
 		} catch (error) {
 			console.log(error.message);
+			alert('Failed to log in, please try again.');
 		}
 	};
 
@@ -43,7 +60,12 @@ function Login() {
 				{' '}
 				Login
 			</button>
-			<Modal show={show} onHide={() => handleModal()}>
+			<Modal
+				show={show}
+				onHide={() => {
+					handleModal();
+				}}
+			>
 				<Modal.Header
 					closeButton
 					style={{ backgroundColor: '#ffc000', height: 170 }}
@@ -59,10 +81,12 @@ function Login() {
 				</Modal.Header>
 				<Modal.Body style={{ height: 350 }}>
 					<form
-						onSubmit={() => {
-							login();
-							history.push('/');
-							handleModal();
+						onSubmit={(e) => {
+							e.preventDefault();
+							// login();
+							onFormSubmit();
+							// handleModal();
+							// history.push('/');
 						}}
 					>
 						<h2
@@ -116,8 +140,9 @@ function Login() {
 										style={{ outline: 'none', marginLeft: '2em' }}
 										onClick={() => {
 											login();
-											history.push('/');
+											// onFormSubmit();
 											handleModal();
+											history.push('/');
 										}}
 									>
 										Login
@@ -136,27 +161,6 @@ function Login() {
 						</div>
 					</form>
 				</Modal.Body>
-				{/* <Modal.Footer className="d-flex justify-content-center">
-					<div className="column">
-						<h2
-							className="top-header mb-5 pb-2"
-							style={{
-								borderBottom: '1px rgb(141, 141, 141) solid',
-								width: 250,
-								fontWeight: 700,
-							}}
-						>
-							Login with
-						</h2>
-						<div className="row">
-							<a href="#" className="my-2 mx-5 login-socialfb"></a>
-
-							<a href="#" className="my-2 mx-5 login-socialg"></a>
-
-							<a href="#" className="my-2 mx-5 login-sociall"></a>
-						</div>
-					</div>
-				</Modal.Footer> */}
 			</Modal>
 		</div>
 	);

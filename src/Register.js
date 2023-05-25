@@ -58,75 +58,83 @@ function Register() {
 					</div>
 				</Modal.Header>
 				<Modal.Body style={{ height: 350 }}>
-					<h2
-						className="top-header mb-5 pb-2 ml-3"
-						style={{
-							borderBottom: '1px rgb(141, 141, 141) solid',
-							width: 250,
-							fontWeight: 700,
+					<form
+						onSubmit={() => {
+							register();
+							history.push('/');
+							handleModal();
 						}}
 					>
-						Register:
-					</h2>
+						<h2
+							className="top-header mb-5 pb-2 ml-3"
+							style={{
+								borderBottom: '1px rgb(141, 141, 141) solid',
+								width: 250,
+								fontWeight: 700,
+							}}
+						>
+							Register:
+						</h2>
 
-					<div className="container">
-						<div className="column">
-							<input
-								type="text"
-								placeholder="Email"
-								name="email"
-								required
-								className="m-2 col-sm mb-3"
-								style={{
-									border: 'none',
-									borderBottom: '1px rgb(141, 141, 141) solid',
-									outline: 'none',
-								}}
-								onChange={(e) => {
-									setRegisterEmail(e.target.value);
-								}}
-							/>
-
-							<input
-								type="password"
-								placeholder="Password"
-								name="psw"
-								className="m-2 col-sm my-3"
-								required
-								style={{
-									border: 'none',
-									borderBottom: '1px rgb(141, 141, 141) solid',
-									outline: 'none',
-								}}
-								onChange={(e) => {
-									setRegisterPassword(e.target.value);
-								}}
-							/>
-							<div>
-								<button
-									type="submit"
-									className="buttoncustom3 font-weight-bold mt-3"
-									style={{ outline: 'none', marginLeft: '2em' }}
-									onClick={() => {
-										register();
-										history.push('/');
-										handleModal();
+						<div className="container">
+							<div className="column">
+								<input
+									type="text"
+									placeholder="Email"
+									name="email"
+									required
+									className="m-2 col-sm mb-3"
+									style={{
+										border: 'none',
+										borderBottom: '1px rgb(141, 141, 141) solid',
+										outline: 'none',
 									}}
-								>
-									Register
-								</button>
-								<label>
-									<input
-										type="checkbox"
-										checked="checked"
-										name="remember"
-										className="ml-5"
-									/>{' '}
-									Remember me
-								</label>
+									onChange={(e) => {
+										setRegisterEmail(e.target.value);
+									}}
+								/>
+
+								<input
+									type="password"
+									placeholder="Password"
+									name="psw"
+									className="m-2 col-sm my-3"
+									required
+									style={{
+										border: 'none',
+										borderBottom: '1px rgb(141, 141, 141) solid',
+										outline: 'none',
+									}}
+									onChange={(e) => {
+										setRegisterPassword(e.target.value);
+									}}
+								/>
+								<div>
+									<button
+										type="submit"
+										className="buttoncustom3 font-weight-bold mt-3"
+										style={{ outline: 'none', marginLeft: '2em' }}
+										onClick={() => {
+											register();
+											history.push('/');
+											handleModal();
+										}}
+									>
+										Register
+									</button>
+									<label>
+										<input
+											type="checkbox"
+											checked="checked"
+											name="remember"
+											className="ml-5"
+										/>{' '}
+										Remember me
+									</label>
+								</div>
 							</div>
 						</div>
-					</div>
+					</form>
 				</Modal.Body>
 			</Modal>
 		</div>
