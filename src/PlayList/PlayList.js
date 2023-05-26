@@ -91,7 +91,7 @@ function PlayList() {
 				}
 			})
 			.catch((err) => {
-				console.log('could not get directory');
+				console.log(err);
 			});
 	}, []);
 
