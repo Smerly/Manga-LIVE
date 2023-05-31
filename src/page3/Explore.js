@@ -3,7 +3,7 @@ import NavbarExplore from './NavbarExplore';
 import Popular from './Popular';
 import Navbar1 from '../Navbar1';
 import '../App.css';
-import Hots from './Hots';
+import Hots from './Hots/Hots';
 import New from './New';
 
 function Explore() {

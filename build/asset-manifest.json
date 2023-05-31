@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/Manga-LIVE/static/css/main.f63987a1.chunk.css",
-    "main.js": "/Manga-LIVE/static/js/main.8cf8185c.chunk.js",
-    "main.js.map": "/Manga-LIVE/static/js/main.8cf8185c.chunk.js.map",
+    "main.js": "/Manga-LIVE/static/js/main.892eb373.chunk.js",
+    "main.js.map": "/Manga-LIVE/static/js/main.892eb373.chunk.js.map",
     "runtime-main.js": "/Manga-LIVE/static/js/runtime-main.05cf0ada.js",
     "runtime-main.js.map": "/Manga-LIVE/static/js/runtime-main.05cf0ada.js.map",
     "static/css/2.4c34b247.chunk.css": "/Manga-LIVE/static/css/2.4c34b247.chunk.css",
-    "static/js/2.6bc90c05.chunk.js": "/Manga-LIVE/static/js/2.6bc90c05.chunk.js",
-    "static/js/2.6bc90c05.chunk.js.map": "/Manga-LIVE/static/js/2.6bc90c05.chunk.js.map",
+    "static/js/2.16ea1bdb.chunk.js": "/Manga-LIVE/static/js/2.16ea1bdb.chunk.js",
+    "static/js/2.16ea1bdb.chunk.js.map": "/Manga-LIVE/static/js/2.16ea1bdb.chunk.js.map",
     "static/js/3.62b4fabf.chunk.js": "/Manga-LIVE/static/js/3.62b4fabf.chunk.js",
     "static/js/3.62b4fabf.chunk.js.map": "/Manga-LIVE/static/js/3.62b4fabf.chunk.js.map",
     "index.html": "/Manga-LIVE/index.html",
     "static/css/2.4c34b247.chunk.css.map": "/Manga-LIVE/static/css/2.4c34b247.chunk.css.map",
     "static/css/main.f63987a1.chunk.css.map": "/Manga-LIVE/static/css/main.f63987a1.chunk.css.map",
-    "static/js/2.6bc90c05.chunk.js.LICENSE.txt": "/Manga-LIVE/static/js/2.6bc90c05.chunk.js.LICENSE.txt",
+    "static/js/2.16ea1bdb.chunk.js.LICENSE.txt": "/Manga-LIVE/static/js/2.16ea1bdb.chunk.js.LICENSE.txt",
     "static/media/CoverForManga.1f97f43d.png": "/Manga-LIVE/static/media/CoverForManga.1f97f43d.png",
     "static/media/App.css": "/Manga-LIVE/static/media/line.9570f029.png"
   },
   "entrypoints": [
     "static/js/runtime-main.05cf0ada.js",
     "static/css/2.4c34b247.chunk.css",
-    "static/js/2.6bc90c05.chunk.js",
+    "static/js/2.16ea1bdb.chunk.js",
     "static/css/main.f63987a1.chunk.css",
-    "static/js/main.8cf8185c.chunk.js"
+    "static/js/main.892eb373.chunk.js"
   ]
 }

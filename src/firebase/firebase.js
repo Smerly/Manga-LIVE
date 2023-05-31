@@ -64,6 +64,7 @@ export async function writeManga(
 		artist: artistIn,
 		slug: slugIn,
 		allPages: allPagesIn,
+		likes: 0,
 	};
 
 	try {
@@ -103,6 +104,7 @@ export async function addNewManga(
 		artist: artistIn,
 		slug: slug,
 		allPages: allPages,
+		likes: 0,
 	});
 
 	console.log(`your doc was created at ${newDoc.path}`);

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loadManga } from './actions';
+import { loadManga, setManga } from './actions';
 
-function MangaList() {
+function MangaList(props) {
+	const {} = props;
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -13,17 +14,19 @@ function MangaList() {
 	const [search, setSearch] = useState('');
 	const mangas = useSelector((state) => state.mangas);
 	// console.log(mangas);
+	const [mangaLocal, setMangaLocal] = useState(mangas);
 
+	console.log(mangas);
+	useEffect(() => {
+		setMangaLocal(mangas);
+	}, [mangas]);
+	console.log(mangas);
 	const MangaList = mangas
-		.filter((val) => {
-			if (search == '') {
-				return val;
-			} else if (val.title.toLowerCase().includes(search.toLowerCase())) {
-				return val;
-			}
+		.sort((a, b) => {
+			return b[1].likes - a[1].likes;
 		})
 		.map((manga, index) => {
-			console.log(manga);
+			// console.log(manga);
 
 			return (
 				<li key={index} style={{ listStyleType: 'none' }}>
@@ -49,6 +52,10 @@ function MangaList() {
 								By: {manga[1].author}
 							</div>
 							<h4 style={{ color: 'black' }}> Genre </h4>
+							<header style={{ color: 'black' }}>
+								{' '}
+								Likes:{manga[1].likes}{' '}
+							</header>
 							<div className="row pl-3 mt-3">
 								<div className="mb-2 mr-3" style={{ color: 'black' }}>
 									{manga[1].genre}

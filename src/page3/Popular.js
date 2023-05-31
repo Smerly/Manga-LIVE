@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import MangaList from '../MangaList';
+
 function Popular() {
 	return (
 		<div className="container">
@@ -8,14 +10,10 @@ function Popular() {
 					className="top-header pt-5 mb-5"
 					style={{ borderBottom: '1px black solid', width: 400 }}
 				>
-					Top 10's
+					Tops
 				</h1>
 				<div className="row">
-					<div className="card m-2 mb-3 p-2 explorebox"></div>
-					<div className="card m-2 mb-3 p-2 explorebox"></div>
-					<div className="card m-2 mb-3 p-2 explorebox"></div>
-					<div className="card m-2 mb-3 p-2 explorebox"></div>
-					<div className="card m-2 mb-3 p-2 explorebox"></div>
+					<MangaList filterQuery="likes" />
 				</div>
 
 				<div className="row">
