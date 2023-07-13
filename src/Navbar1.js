@@ -7,9 +7,11 @@ import { NavLink, useHistory } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import { auth } from './firebase/firebase';
+import mangaLiveLogo from './images/Manga-LIVE.png';
 function Navbar1() {
 	const [user, setUser] = useState({});
 	const history = useHistory();
+	const [showNav, setShowNav] = useState(false);
 
 	const logout = async () => {
 		await signOut(auth);
@@ -18,6 +20,43 @@ function Navbar1() {
 	onAuthStateChanged(auth, (currentUser) => {
 		setUser(currentUser);
 	});
+
+	const hiddenNavbar = () => {
+		if (showNav) {
+			return (
+				<div>
+					<div>
+						{/* <NavLink
+							to={`/`}
+							className="customlink1 font-weight-bold navbar-brand mr-5"
+						></NavLink> */}
+						<NavLink
+							className="customlink font-weight-bold nav-link mx-3"
+							whileHover={{ color: 'black' }}
+							to={`/create`}
+						>
+							Create
+						</NavLink>
+						<NavLink
+							className="customlink font-weight-bold nav-link mx-3"
+							exact
+							to={`/explore`}
+						>
+							Explore
+						</NavLink>
+						<NavLink
+							href="account.html"
+							className="customlink font-weight-bold nav-link mx-3"
+							exact
+							to={`/Account`}
+						>
+							Account
+						</NavLink>
+					</div>
+				</div>
+			);
+		}
+	};
 	const handleUser = () => {
 		if (!user) {
 			return (
@@ -63,21 +102,28 @@ function Navbar1() {
 	return (
 		<div className="Navbar1">
 			<section style={{ backgroundColor: 'white' }}>
-				<nav className="navbarcustom navbar navbar-expand-sm navbar-light">
-					<NavLink
-						to={`/`}
-						className="customlink1 font-weight-bold navbar-brand mr-5"
-					></NavLink>
+				<nav
+					className="navbarcustom navbar navbar-expand-sm navbar-light"
+					style={{ paddingTop: 15, paddingBottom: 15 }}
+				>
+					<NavLink to={`/`} className="font-weight-bold">
+						<img src={mangaLiveLogo} className="logo-link customlink1" />
+					</NavLink>
 
 					<button
 						className="navbar-toggler"
 						type="button"
 						data-toggle="collapse"
 						data-target="#collapsibleNavbar"
+						onClick={() => {
+							setShowNav(!showNav);
+						}}
 					>
+						{hiddenNavbar()}
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse" id="collapsibleNavbar">
+					<div></div>
+					<div className="collapse navbar-collapse ml-5" id="collapsibleNavbar">
 						<ul className="mr-auto navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2">
@@ -146,7 +192,7 @@ function Navbar1() {
 									''
 								)}
 
-								<div className="separation-line mt-3"></div>
+								{/* <div className="separation-line mt-3"></div> */}
 
 								{/* <li className="nav-item px-2 mr-4">
 									<form className="form-inline" action="/action_page.php">
@@ -162,7 +208,7 @@ function Navbar1() {
 					</div>
 				</nav>
 			</section>
-		</div> // Dont touch this div or anything beyond here
+		</div>
 	);
 }
 

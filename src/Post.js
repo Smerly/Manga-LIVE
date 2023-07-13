@@ -334,7 +334,7 @@ function Post() {
 									{manga.description}
 								</h5>
 
-								<Link
+								{/* <Link
 									className="buttoncustom3 mt-5"
 									to={`/posts/${manga.slug}/playlist`}
 									style={{
@@ -352,9 +352,9 @@ function Post() {
 									<h3 className="font-weight-bold" style={{ margin: 'auto' }}>
 										Begin Reading
 									</h3>
-								</Link>
+								</Link> */}
 
-								{/* <button
+								<button
 									className="buttoncustom3 mt-5"
 									style={{
 										width: 250,
@@ -380,14 +380,20 @@ function Post() {
 									onHide={() => {
 										handleModal();
 									}}
-									style={
-										{
-											// display: 'flex',
-											// justifyContent: 'center',
-											// alignItems: 'center',
-											// marginLeft: '-15%',
-										}
-									}
+									style={{
+										// width: '80%',
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+										maxWidth: 'none !important',
+										border: '1px red solid',
+										// marginLeft: '-15%',
+									}}
+									// !!! You can put attributes here according to the react-bootstrap docs (like below) !!!
+
+									dialogClassName="modal-lg"
+									scrollable="true"
+									centered="true"
 								>
 									<Modal.Header
 										style={{
@@ -395,6 +401,7 @@ function Post() {
 											backgroundColor: 'white',
 											border: '1px black solid',
 										}}
+										className="modal-size"
 										closeButton
 									></Modal.Header>
 									<Modal.Body
@@ -402,11 +409,15 @@ function Post() {
 											// width: '200%',
 											backgroundColor: 'white',
 											border: '1px black solid',
+											display: 'flex',
+											justifyContent: 'center',
+											alignItems: 'center',
 										}}
+										className="modal-size"
 									>
 										<PlayList />
 									</Modal.Body>
-								</Modal> */}
+								</Modal>
 							</div>
 							<div
 								className="col-md-6 ml-3"

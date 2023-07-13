@@ -119,6 +119,7 @@ function Create() {
 								?
 							</button>
 						</h1>
+						{/* Purpose */}
 						<div className="container">
 							<div className="column">
 								<div className="d-flex align-items-center justify-content-center pt-5">
@@ -131,18 +132,15 @@ function Create() {
 											id="t1"
 										/>
 
-										<a
-											className="col-sm customlink3 nav-link m-2 my-5 mx-5"
-											style={{ fontSize: 64, fontWeight: 800 }}
-										>
+										<a className="col-sm create-responsive customlink3 nav-link m-2 my-5">
 											<label for="t1" className={checkHover(own)}>
 												{' '}
 												Starting a story{' '}
 											</label>
 										</a>
 									</div>
-									<div className="col-sm m-2">
-										<h2 className="text-dark h1-text">or</h2>
+									<div className="col-sm">
+										<h2 className="create-responsive text-dark h1-text">or</h2>
 									</div>
 									<div className="col-sm m-2">
 										<input
@@ -153,11 +151,12 @@ function Create() {
 											id="t2"
 										/>
 
-										<a
-											className="col-sm customlink3 nav-link m-2 my-5 mx-5"
-											style={{ fontSize: 64, fontWeight: 800 }}
-										>
-											<label for="t2" className={checkHover(help)}>
+										<a className="col-sm customlink3 create-responsive nav-link m-2 my-5">
+											<label
+												style={{ wordWrap: 'break-word' }}
+												for="t2"
+												className={checkHover(help)}
+											>
 												{' '}
 												Collaborating for others{' '}
 											</label>
@@ -171,12 +170,19 @@ function Create() {
 
 				<div className="divider"></div>
 
+				{/* Roles */}
 				<section>
 					<div className="box-sections border" style={{ height: 800 }}>
 						<h1 className="h1-text-white h1-text m-5 pb-5">
 							Which roles will you be fulfilling?
 						</h1>
-						<div className="column">
+						<div
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								flexWrap: 'wrap',
+							}}
+						>
 							<div className="row d-flex align-items-center justify-content-center">
 								<input
 									checked={manga}
@@ -185,10 +191,7 @@ function Create() {
 									className="toggle col-sm"
 									id="t3"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t3" className={checkHover(manga)}>
 										Mangaka/Artist{' '}
 									</label>
@@ -200,10 +203,7 @@ function Create() {
 									className="toggle col-sm"
 									id="t4"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t4" className={checkHover(voice)}>
 										Voice acting{' '}
 									</label>
@@ -215,16 +215,12 @@ function Create() {
 									className="toggle col-sm"
 									id="t5"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t5" className={checkHover(translate)}>
 										Translator{' '}
 									</label>
 								</a>
 							</div>
-
 							<div className="row">
 								<input
 									type="checkbox"
@@ -233,10 +229,7 @@ function Create() {
 									className="toggle col-sm"
 									id="t6"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t6" className={checkHover(program)}>
 										Programmer{' '}
 									</label>
@@ -248,10 +241,7 @@ function Create() {
 									className="toggle col-sm"
 									id="t7"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t7" className={checkHover(write)}>
 										Writer
 									</label>
@@ -263,10 +253,7 @@ function Create() {
 									className="toggle col-sm"
 									id="t8"
 								/>
-								<a
-									className="customlink3 nav-link m-2 my-5 mx-5"
-									style={{ fontSize: 64, fontWeight: 800 }}
-								>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
 									<label for="t8" className={checkHover(other)}>
 										Other
 									</label>

@@ -97,21 +97,13 @@ function PlayList() {
 
 	console.log(images);
 	return (
-		<div>
-			{/* <button
-				onClick={() => {
-					console.log(images);
-					setImages((images) => [...images, []]);
-				}}
-			>
-				adasd
-			</button> */}
+		<div className="reading-main">
 			{images.map((page, index) => {
 				return (
-					<div className="reading-main" key={index}>
-						{' '}
-						<img src={page} style={{ width: 100, height: 100 }} />
-					</div>
+					// <div className="" style={{}} key={index}>
+					// {' '}
+					<img src={page} className="image" />
+					// </div>
 				);
 			})}
 		</div>

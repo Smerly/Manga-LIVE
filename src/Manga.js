@@ -193,7 +193,7 @@ function Manga() {
 						</div>
 						<div>
 							<label
-								class="labels-create"
+								class="labels-create mt-3"
 								style={{
 									fontSize: '1.5em',
 									fontWeight: 700,
@@ -211,15 +211,14 @@ function Manga() {
 									} else {
 									}
 								}}
-								maxLength="20"
+								maxLength="0"
 								value={author}
 								style={{ marginRight: 80 }}
-								placeholder={`${username}?`}
+								placeholder={`${username}`}
 							/>
 
 							<header className="alert-heading">
-								If left blank, the author will default to {username}{' '}
-								{getTheAuthor}
+								Default: {username} {getTheAuthor}
 							</header>
 						</div>
 						<div>

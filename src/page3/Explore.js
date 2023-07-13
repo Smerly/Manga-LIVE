@@ -3,8 +3,7 @@ import NavbarExplore from './NavbarExplore';
 import Popular from './Popular';
 import Navbar1 from '../Navbar1';
 import '../App.css';
-import Hots from './Hots/Hots';
-import New from './New';
+import Genre from './Genre';
 
 function Explore() {
 	return (
@@ -14,9 +13,9 @@ function Explore() {
 			<section className="bg-light" style={{ minHeight: 700 }}>
 				<Popular />
 				<div className="divider" style={{ backgroundColor: '#ffc000' }}></div>
-				<Hots />
+				<Genre />
 				<div className="divider" style={{ backgroundColor: '#ffc000' }}></div>
-				<New />
+
 				<div className="divider" style={{ backgroundColor: '#ffc000' }}></div>
 			</section>
 		</div>

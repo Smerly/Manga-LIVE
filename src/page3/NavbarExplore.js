@@ -5,19 +5,20 @@ function NavbarExplore() {
 	return (
 		<section>
 			<nav className="navbar navbar-expand-sm navbar-light bg-gray">
-				<button
+				{/* <button
 					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
 					data-target="#collapsibleNavbar"
 				>
 					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div className="collapse navbar-collapse" id="collapsibleNavbar">
+				</button> */}
+				{/* <div className="collapse navbar-collapse" id="collapsibleNavbar"> */}
+				<div className="navbar-collapse">
 					<ul className="navbar-nav nav-fill w-100">
 						<li className="nav-item">
 							<Link
-								to={`/explore`}
+								to={`/`}
 								class="customlink2 nav-link py-2"
 								style={{ fontSize: 25, fontWeight: 550 }}
 							>
@@ -33,7 +34,7 @@ function NavbarExplore() {
 								Genre
 							</Link>
 						</li>
-						<li class="nav-item">
+						{/* <li class="nav-item">
 							<Link
 								to={`/explore`}
 								className="customlink2 nav-link py-2"
@@ -41,8 +42,8 @@ function NavbarExplore() {
 							>
 								Weekly
 							</Link>
-						</li>
-						<li class="nav-item">
+						</li> */}
+						{/* <li class="nav-item">
 							<Link
 								to={`/explore`}
 								className="customlink2 nav-link py-2"
@@ -50,7 +51,7 @@ function NavbarExplore() {
 							>
 								Recommended
 							</Link>
-						</li>
+						</li> */}
 						<li class="nav-item">
 							<Link
 								to={`/search`}

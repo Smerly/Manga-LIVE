@@ -7,12 +7,53 @@ import { NavLink, useHistory } from 'react-router-dom';
 import Login2 from './Login2';
 import Register2 from './Register2';
 import { auth } from './firebase/firebase';
+import mangaLiveLogo from './images/Manga-LIVE2.png';
 function Navbar2() {
 	const history = useHistory();
 	const [user, setUser] = useState({});
+	const [showNav, setShowNav] = useState(false);
 
 	const logout = async () => {
 		await signOut(auth);
+	};
+
+	const hiddenNavbar = () => {
+		if (showNav) {
+			return (
+				<div>
+					<div>
+						{/* <NavLink
+							to={`/`}
+							className="customlink1 font-weight-bold navbar-brand mr-5"
+						></NavLink> */}
+						<NavLink
+							className="customlink2 font-weight-bold nav-link mx-3"
+							style={{ color: 'black' }}
+							to={`/create`}
+						>
+							Create
+						</NavLink>
+						<NavLink
+							className="customlink2 font-weight-bold nav-link mx-3"
+							exact
+							style={{ color: 'black' }}
+							to={`/explore`}
+						>
+							Explore
+						</NavLink>
+						<NavLink
+							href="account.html"
+							className="customlink2 font-weight-bold nav-link mx-3"
+							exact
+							to={`/Account`}
+							style={{ color: 'black' }}
+						>
+							Account
+						</NavLink>
+					</div>
+				</div>
+			);
+		}
 	};
 
 	onAuthStateChanged(auth, (currentUser) => {
@@ -63,17 +104,20 @@ function Navbar2() {
 		<div className="Navbar2">
 			<section>
 				<nav className="navbarcustom2 navbar navbar-expand-sm navbar-light">
-					<NavLink
-						to={`/`}
-						className="customlink4 font-weight-bold navbar-brand mr-5"
-					></NavLink>
+					<NavLink to={`/`} className="font-weight-bold">
+						<img src={mangaLiveLogo} className="logo-link customlink1" />
+					</NavLink>
 
 					<button
 						className="navbar-toggler"
 						type="button"
 						data-toggle="collapse"
 						data-target="#collapsibleNavbar"
+						onClick={() => {
+							setShowNav(!showNav);
+						}}
 					>
+						{hiddenNavbar()}
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="collapsibleNavbar">

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
+import Create from '../page2/Create';
 import MangaList from '../MangaList';
 
-function Popular() {
+function Genre() {
 	return (
 		<div className="container">
 			<div className="column pb-5 mb-5" style={{ minHeight: 800 }}>
@@ -10,13 +11,13 @@ function Popular() {
 					className="top-header pt-5 mb-5"
 					style={{ borderBottom: '1px black solid', width: 400 }}
 				>
-					Tops
+					Genre
 				</h1>
-				<div className="row">
-					<MangaList filterQuery="likes" />
-				</div>
+				<div className="row"></div>
+				<MangaList filterQuery="genre" />
+				<div className="row"></div>
 			</div>
 		</div>
 	);
 }
-export default Popular;
+export default Genre;
