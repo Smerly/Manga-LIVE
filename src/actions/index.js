@@ -59,10 +59,10 @@ export const setHelp = (help) => {
 		payload: { help },
 	};
 };
-export const setManga = (ismanga) => {
+export const setManga = (manga) => {
 	return {
 		type: SET_MANGA,
-		payload: { ismanga },
+		payload: { manga },
 	};
 };
 export const setVoice = (voice) => {

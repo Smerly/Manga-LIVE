@@ -192,7 +192,6 @@ a.customlink2:hover {
 
   .create-responsive {
     flex-wrap: wrap;
-    background-color: red;
   }
 }
 a.customlink4 {
@@ -428,7 +427,6 @@ a.customlink4 {
 }
 #responsive-small-title {
   font-size: 25px;
-  color: red;
   text-align: center;
 }
 

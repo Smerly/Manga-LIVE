@@ -1,5 +1,5 @@
 import '../App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar2 from '../Navbar2';
 import CreateHelp from './CreateHelp';
 import '../App.css';
@@ -31,6 +31,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Create() {
 	const [show, setShow] = useState(false);
+	const [smallWindow, setSmallWindow] = useState(window.innerWidth);
 	const handleModal = () => {
 		setShow(!show);
 	};
@@ -68,10 +69,13 @@ function Create() {
 			alert('You have to login to make posts.');
 		}
 	};
+	useEffect(() => {
+		console.log('changed');
+	}, [window.innerWidth]);
 
 	const checkHover = (item) => {
-		if (item == true) {
-			console.log('lighter black');
+		if (item === true) {
+			console.log(`${item}, lighter black`);
 			return 'create-selection2 cursor';
 		} else {
 			console.log('darker white');
@@ -172,22 +176,23 @@ function Create() {
 
 				{/* Roles */}
 				<section>
-					<div className="box-sections border" style={{ height: 800 }}>
+					<div className="box-sections border" style={{ minHeight: 800 }}>
 						<h1 className="h1-text-white h1-text m-5 pb-5">
 							Which roles will you be fulfilling?
 						</h1>
 						<div
 							style={{
 								display: 'flex',
-								flexDirection: 'column',
+								flexDirection: 'row',
 								flexWrap: 'wrap',
+								justifyContent: 'space-evenly',
 							}}
 						>
-							<div className="row d-flex align-items-center justify-content-center">
+							<div className="column">
 								<input
+									type="checkbox"
 									checked={manga}
 									onChange={(e) => dispatch(setManga(e.target.checked))}
-									type="checkbox"
 									className="toggle col-sm"
 									id="t3"
 								/>
@@ -196,6 +201,20 @@ function Create() {
 										Mangaka/Artist{' '}
 									</label>
 								</a>
+
+								{/* <input
+									type="checkbox"
+									checked={voice}
+									onChange={(e) => dispatch(setVoice(e.target.checked))}
+									className="toggle col-sm"
+									id="t100"
+								/>
+								<a className="customlink3 create-responsive nav-link m-2 my-5">
+									<label for="t100" className={checkHover(voice)}>
+										extra
+									</label>
+								</a> */}
+
 								<input
 									type="checkbox"
 									checked={voice}
@@ -208,6 +227,7 @@ function Create() {
 										Voice acting{' '}
 									</label>
 								</a>
+
 								<input
 									checked={translate}
 									onChange={(e) => dispatch(setTranslate(e.target.checked))}
@@ -221,7 +241,7 @@ function Create() {
 									</label>
 								</a>
 							</div>
-							<div className="row">
+							<div className="column">
 								<input
 									type="checkbox"
 									checked={program}
@@ -382,69 +402,88 @@ function Create() {
 											</label>
 										</a>
 									</div>
+									<div
+										className="column pb-5 mt-5"
+										style={{
+											display: 'flex',
+											flexDirection: 'column',
+											alignItems: 'center',
+										}}
+									>
+										<h2
+											className="display-4 h1-text-white"
+											style={{
+												fontWeight: 800,
+												fontSize: 45,
+												borderBottom: '1 black solid',
+											}}
+										>
+											Gender
+										</h2>
 
-									<div className="row d-flex align-items-center ml-5 pl-5">
-										<input
-											checked={male}
-											onChange={(e) => dispatch(setMale(e.target.checked))}
-											type="checkbox"
-											className="toggle"
-											id="t17"
-										/>
-										<a
-											className=" customlink3 nav-link m-2 my-5 mx-5"
-											style={{ fontSize: 40, fontWeight: 800 }}
-										>
-											<label for="t17" className="cursor">
-												Male
-											</label>
-										</a>
-										<div className="col-sm m-2">
-											<h3
-												className="text-dark h1-text"
-												style={{ fontSize: 40 }}
+										<div className="row d-flex align-items-center ml-5 pl-5">
+											<input
+												checked={male}
+												onChange={(e) => dispatch(setMale(e.target.checked))}
+												type="checkbox"
+												className="toggle"
+												id="t17"
+											/>
+											<a
+												className=" customlink3 nav-link m-2 my-5 mx-5"
+												style={{ fontSize: 40, fontWeight: 800 }}
 											>
-												or
-											</h3>
-										</div>
-										<input
-											checked={female}
-											onChange={(e) => dispatch(setFemale(e.target.checked))}
-											type="checkbox"
-											className="toggle"
-											id="t18"
-										/>
-										<a
-											className=" customlink3 nav-link m-2 my-5 mx-5"
-											style={{ fontSize: 40, fontWeight: 800 }}
-										>
-											<label for="t18" className="cursor">
-												Female
-											</label>
-										</a>
-										<div className="col-sm m-2">
-											<h3
-												className="text-dark h1-text"
-												style={{ fontSize: 50, fontWeight: 800 }}
+												<label for="t17" className="cursor">
+													Male
+												</label>
+											</a>
+											<div className="col-sm m-2">
+												<h3
+													className="text-dark h1-text"
+													style={{ fontSize: 40 }}
+												>
+													or
+												</h3>
+											</div>
+											<input
+												checked={female}
+												onChange={(e) => dispatch(setFemale(e.target.checked))}
+												type="checkbox"
+												className="toggle"
+												id="t18"
+											/>
+											<a
+												className=" customlink3 nav-link m-2 my-5 mx-5"
+												style={{ fontSize: 40, fontWeight: 800 }}
 											>
-												or
-											</h3>
+												<label for="t18" className="cursor">
+													Female
+												</label>
+											</a>
+											<div className="col-sm m-2">
+												<h3
+													className="text-dark h1-text"
+													style={{ fontSize: 50, fontWeight: 800 }}
+												>
+													or
+												</h3>
+											</div>
+											<input
+												checked={both}
+												onChange={(e) => dispatch(setBoth(e.target.checked))}
+												type="checkbox"
+												className="toggle"
+												id="t19"
+											/>
+											<a
+												className="customlink3 nav-link m-2 my-5 mx-5"
+												style={{ fontSize: 40, fontWeight: 800 }}
+											>
+												<label for="t19" className="cursor">
+													Both/Other
+												</label>
+											</a>
 										</div>
-										<input
-											checked={both}
-											onChange={(e) => dispatch(setBoth(e.target.checked))}
-											type="checkbox"
-											className="toggle"
-											id="t19"
-										/>
-										<a
-											className="customlink3 nav-link m-2 my-5 mx-5"
-											style={{ fontSize: 40, fontWeight: 800 }}
-										>
-											<label for="t19" className="cursor">
-												Both/Other
-											</label>
-										</a>
 									</div>
 								</div>
 							</div>
