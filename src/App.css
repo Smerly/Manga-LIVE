@@ -452,5 +452,15 @@ a.customlink4 {
 
 	}
 } */
+@media (max-width: 1000px) {
+  a.customlink1 {
+    width: 100;
+  }
+
+  .create-responsive2 {
+    font-size: 3.8vw !important;
+    font-weight: 800;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

@@ -434,14 +434,13 @@ function Create() {
 													Male
 												</label>
 											</a>
-											<div className="col-sm m-2">
-												<h3
-													className="text-dark h1-text"
-													style={{ fontSize: 40 }}
-												>
+
+											<div className="col-sm">
+												<h2 className="create-responsive text-dark h1-text">
 													or
-												</h3>
+												</h2>
 											</div>
+
 											<input
 												checked={female}
 												onChange={(e) => dispatch(setFemale(e.target.checked))}
@@ -454,14 +453,13 @@ function Create() {
 													Female
 												</label>
 											</a>
-											<div className="col-sm m-2">
-												<h3
-													className="text-dark h1-text"
-													style={{ fontSize: 40 }}
-												>
+
+											<div className="col-sm">
+												<h2 className="create-responsive text-dark h1-text">
 													or
-												</h3>
+												</h2>
 											</div>
+
 											<input
 												checked={both}
 												onChange={(e) => dispatch(setBoth(e.target.checked))}
