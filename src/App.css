@@ -266,7 +266,12 @@ a.customlink4 {
 }
 
 .create-responsive {
-  font-size: 4vw;
+  font-size: 3.8vw;
+  font-weight: 800;
+}
+
+.create-responsive2 {
+  font-size: 2vw;
   font-weight: 800;
 }
 

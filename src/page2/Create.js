@@ -309,7 +309,7 @@ function Create() {
 											className="toggle"
 											id="t9"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t9" className={checkHover(english)}>
 												English
 											</label>
@@ -321,7 +321,7 @@ function Create() {
 											className="toggle"
 											id="t10"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t10" className={checkHover(chinese)}>
 												日本語
 											</label>
@@ -333,7 +333,7 @@ function Create() {
 											className="toggle"
 											id="t11"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t11" className={checkHover(korean)}>
 												한국어
 											</label>
@@ -345,7 +345,7 @@ function Create() {
 											className="toggle"
 											id="t12"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t12" className={checkHover(japanese)}>
 												中文
 											</label>
@@ -360,7 +360,7 @@ function Create() {
 											className="toggle"
 											id="t13"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t13" className={checkHover(spanish)}>
 												Español
 											</label>
@@ -372,7 +372,7 @@ function Create() {
 											className="toggle"
 											id="t14"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t14" className={checkHover(french)}>
 												Français
 											</label>
@@ -384,7 +384,7 @@ function Create() {
 											className="toggle"
 											id="t15"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t15" className={checkHover(indonesia)}>
 												Indonesia
 											</label>
@@ -396,7 +396,7 @@ function Create() {
 											className="toggle"
 											id="t16"
 										/>
-										<a className="customlink3 nav-link display-4 ml-5 pl-4 pt-4">
+										<a className="customlink3 create-responsive nav-link ml-5 pl-4 pt-4">
 											<label for="t16" className={checkHover(thai)}>
 												ภาษาไทย
 											</label>
@@ -429,11 +429,8 @@ function Create() {
 												className="toggle"
 												id="t17"
 											/>
-											<a
-												className=" customlink3 nav-link m-2 my-5 mx-5"
-												style={{ fontSize: 40, fontWeight: 800 }}
-											>
-												<label for="t17" className="cursor">
+											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mr-5 ">
+												<label for="t17" className={checkHover(male)}>
 													Male
 												</label>
 											</a>
@@ -452,18 +449,15 @@ function Create() {
 												className="toggle"
 												id="t18"
 											/>
-											<a
-												className=" customlink3 nav-link m-2 my-5 mx-5"
-												style={{ fontSize: 40, fontWeight: 800 }}
-											>
-												<label for="t18" className="cursor">
+											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mx-5">
+												<label for="t18" className={checkHover(female)}>
 													Female
 												</label>
 											</a>
 											<div className="col-sm m-2">
 												<h3
 													className="text-dark h1-text"
-													style={{ fontSize: 50, fontWeight: 800 }}
+													style={{ fontSize: 40 }}
 												>
 													or
 												</h3>
@@ -475,11 +469,8 @@ function Create() {
 												className="toggle"
 												id="t19"
 											/>
-											<a
-												className="customlink3 nav-link m-2 my-5 mx-5"
-												style={{ fontSize: 40, fontWeight: 800 }}
-											>
-												<label for="t19" className="cursor">
+											<a className="customlink3 create-responsive2 nav-link m-2 my-5 ml-5">
+												<label for="t19" className={checkHover(both)}>
 													Both/Other
 												</label>
 											</a>
