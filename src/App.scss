@@ -9,7 +9,18 @@ body {
 	padding: 0px;
 	overflow-x: hidden;
 }
+.responsive-gender {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
 
+.responsive-3rd {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
 .logo-link {
 	width: 19vw;
 }
@@ -180,26 +191,6 @@ a.customlink1 {
 	// object-fit: cover;
 }
 // 6.28
-@media (max-width: 1200px) {
-	a.customlink1 {
-		width: 100;
-	}
-}
-
-@media (max-width: 576px) {
-	.navbar-toggler {
-		margin-left: auto;
-		justify-self: flex-end !important;
-		align-self: self-end !important;
-	}
-	.logo-link {
-		width: 40vw !important;
-		height: auto;
-	}
-	.create-responsive {
-		flex-wrap: wrap;
-	}
-}
 
 a.customlink4 {
 	background-image: url(./images/Manga-LIVE2.png);
@@ -211,6 +202,11 @@ a.customlink4 {
 
 .images-hero {
 	width: 40%;
+}
+
+.responsive-options-3 {
+	display: flex;
+	flex-direction: row;
 }
 
 .herocustom {
@@ -436,12 +432,6 @@ a.customlink4 {
 	color: $primary-hover;
 }
 
-@media only screen and (max-width: 900px) {
-	.img-resp {
-		align-self: center;
-	}
-}
-
 #responsive-small-title {
 	font-size: 25px;
 	text-align: center;
@@ -471,5 +461,40 @@ a.customlink4 {
 	.create-responsive2 {
 		font-size: 3.8vw !important;
 		font-weight: 800;
+	}
+}
+@media (max-width: 1200px) {
+	a.customlink1 {
+		width: 100;
+	}
+	.responsive-options-3 {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.navbar-toggler {
+		margin-left: auto;
+		justify-self: flex-end !important;
+		align-self: self-end !important;
+	}
+	.logo-link {
+		width: 40vw !important;
+		height: auto;
+	}
+	.create-responsive {
+		flex-wrap: wrap;
+	}
+	.responsive-gender {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+@media only screen and (max-width: 900px) {
+	.img-resp {
+		align-self: center;
 	}
 }

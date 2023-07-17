@@ -300,7 +300,7 @@ function Create() {
 								>
 									Languages Fluent
 								</h2>
-								<div className="row">
+								<div className="responsive-3rd">
 									<div className="column">
 										<input
 											checked={english}
@@ -421,7 +421,7 @@ function Create() {
 											Gender
 										</h2>
 
-										<div className="row d-flex align-items-center ml-5 pl-5">
+										<div className="responsive-gender ml-5 pl-5">
 											<input
 												checked={male}
 												onChange={(e) => dispatch(setMale(e.target.checked))}
@@ -429,13 +429,13 @@ function Create() {
 												className="toggle"
 												id="t17"
 											/>
-											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mr-5 ">
+											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mr-5">
 												<label for="t17" className={checkHover(male)}>
 													Male
 												</label>
 											</a>
 
-											<div className="col-sm">
+											<div className="">
 												<h2 className="create-responsive text-dark h1-text">
 													or
 												</h2>
@@ -454,7 +454,7 @@ function Create() {
 												</label>
 											</a>
 
-											<div className="col-sm">
+											<div className="">
 												<h2 className="create-responsive text-dark h1-text">
 													or
 												</h2>
