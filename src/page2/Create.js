@@ -144,7 +144,12 @@ function Create() {
 										</a>
 									</div>
 									<div className="col-sm">
-										<h2 className="create-responsive text-dark h1-text">or</h2>
+										<h2
+											className="create-responsive text-dark h1-text"
+											style={{ textAlign: 'center' }}
+										>
+											or
+										</h2>
 									</div>
 									<div className="col-sm m-2">
 										<input
@@ -352,7 +357,7 @@ function Create() {
 										</a>
 									</div>
 
-									<div className="column">
+									<div className="column mr-5">
 										<input
 											checked={spanish}
 											onChange={(e) => dispatch(setSpanish(e.target.checked))}
@@ -403,7 +408,7 @@ function Create() {
 										</a>
 									</div>
 									<div
-										className="column pb-5 mt-5"
+										className="column pb-5 mt-5 pt-5"
 										style={{
 											display: 'flex',
 											flexDirection: 'column',
@@ -421,7 +426,7 @@ function Create() {
 											Gender
 										</h2>
 
-										<div className="responsive-gender ml-5 pl-5">
+										<div className="responsive-gender">
 											<input
 												checked={male}
 												onChange={(e) => dispatch(setMale(e.target.checked))}
@@ -429,14 +434,14 @@ function Create() {
 												className="toggle"
 												id="t17"
 											/>
-											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mr-5">
+											<a className="customlink3 create-responsive2 nav-link m-2">
 												<label for="t17" className={checkHover(male)}>
 													Male
 												</label>
 											</a>
 
 											<div className="">
-												<h2 className="create-responsive text-dark h1-text">
+												<h2 className="create-responsive2 text-dark h1-text">
 													or
 												</h2>
 											</div>
@@ -448,14 +453,14 @@ function Create() {
 												className="toggle"
 												id="t18"
 											/>
-											<a className="customlink3 create-responsive2 nav-link m-2 my-5 mx-5">
+											<a className="customlink3 create-responsive2 nav-link m-2">
 												<label for="t18" className={checkHover(female)}>
 													Female
 												</label>
 											</a>
 
 											<div className="">
-												<h2 className="create-responsive text-dark h1-text">
+												<h2 className="create-responsive2 text-dark h1-text">
 													or
 												</h2>
 											</div>
@@ -467,7 +472,7 @@ function Create() {
 												className="toggle"
 												id="t19"
 											/>
-											<a className="customlink3 create-responsive2 nav-link m-2 my-5 ml-5">
+											<a className="customlink3 create-responsive2 nav-link m-2 ">
 												<label for="t19" className={checkHover(both)}>
 													Both/Other
 												</label>
