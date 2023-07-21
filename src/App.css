@@ -54,6 +54,10 @@ body {
   background-color: #f0f0f0;
 }
 
+.bg-black {
+  background-color: black;
+}
+
 .underline {
   border-top: 1px black solid;
   margin-left: -120px;
@@ -198,6 +202,32 @@ a.customlink4 {
   width: 40%;
 }
 
+.box-in-vid {
+  position: absolute;
+  width: 30vw;
+  font-size: 1vw;
+  height: auto;
+  left: 7vw;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.vid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.videoxd {
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 70%;
+  margin-bottom: -0.73vh;
+}
+
 .responsive-options-3 {
   display: flex;
   flex-direction: row;
@@ -232,6 +262,17 @@ a.customlink4 {
   width: 170px;
   height: 70px;
   background-color: #f3b600;
+  border: 0px;
+  border-radius: 50px;
+  font-size: 1.4em;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.buttoncustom4 {
+  width: 170px;
+  height: 70px;
+  background-color: black;
   border: 0px;
   border-radius: 50px;
   font-size: 1.4em;
