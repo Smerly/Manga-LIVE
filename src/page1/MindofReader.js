@@ -48,6 +48,7 @@ function MindofReader() {
 			<video autoPlay loop muted className="videoxd">
 				{/* <source src={stockvid2} type="video/mp4" /> */}
 				<source src={stockvid} type="video/ogg" />
+				<source src={stockvid} type="video/mp4" />
 			</video>
 		</section>
 	);
