@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import stockvid from '../images/stockvid.mp4';
 import stockvid2 from '../images/stockvid2.mp4';
+import ReactPlayer from 'react-player';
 function MindofReader() {
 	return (
 		<section className="bg-black">
@@ -44,14 +45,22 @@ function MindofReader() {
 
 				<button className="buttoncustom2">Learn more</button>
 			</div>
-			{/* <div className="vid-overlay" /> */}
-			<video autoPlay playsInline playsinline loop muted className="videoxd">
-				{/* <source src={stockvid2} type="video/mp4" /> */}
-				<source src={stockvid} type="video/mp4" />
+			<div className="vid-overlay" />
+			{/* <video autoPlay playsInline playsinline loop muted className="videoxd"> */}
+			{/* <source src={stockvid2} type="video/mp4" /> */}
+			{/* <source src={stockvid} type="video/mp4" />
 				<source src={stockvid} type="video/ogg" />
 				<source src={stockvid} type="video/mov" />
 				Your browser does not support the video tag or format.
-			</video>
+			</video> */}
+
+			<ReactPlayer
+				url={stockvid}
+				loop="true"
+				controls="true"
+				muted="true"
+				playing="false"
+			/>
 		</section>
 	);
 }
