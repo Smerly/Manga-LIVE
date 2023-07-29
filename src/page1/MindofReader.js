@@ -45,10 +45,12 @@ function MindofReader() {
 				<button className="buttoncustom2">Learn more</button>
 			</div>
 			{/* <div className="vid-overlay" /> */}
-			<video autoPlay loop muted className="videoxd">
+			<video autoPlay playsInline playsinline loop muted className="videoxd">
 				{/* <source src={stockvid2} type="video/mp4" /> */}
-				<source src={stockvid} type="video/ogg" />
 				<source src={stockvid} type="video/mp4" />
+				<source src={stockvid} type="video/ogg" />
+				<source src={stockvid} type="video/mov" />
+				Your browser does not support the video tag or format.
 			</video>
 		</section>
 	);
