@@ -5,20 +5,38 @@ import { Carousel } from 'react-bootstrap';
 import Cover from '../images/CoverForManga.png';
 import MangaLIVE from '../images/Manga-LIVE.png';
 
+const carouselItems = [
+	{
+		name: 'manga1',
+		src: MangaLIVE,
+	},
+	{
+		name: 'manga2',
+		src: Cover,
+	},
+	{
+		name: 'manga3',
+		src: MangaLIVE,
+	},
+];
+
 function Carouselimg() {
 	return (
 		<Carousel>
-			<Carousel.Item>
-				{/* <img src={Cover} className="Carouselnew" alt="Manga1" /> */}
-				<img src={MangaLIVE} className="Carouselnew" alt="Manga2" />
-			</Carousel.Item>
-			<Carousel.Item>
-				<img src={MangaLIVE} className="Carouselnew" alt="Manga2" />
-			</Carousel.Item>
-			<Carousel.Item>
-				{/* <img src={Cover} className="Carouselnew" alt="Manga3" /> */}
-				<img src={MangaLIVE} className="Carouselnew" alt="Manga2" />
-			</Carousel.Item>
+			{carouselItems.map((each) => {
+				return (
+					<Carousel.Item>
+						<div style={{ display: 'flex', margin: 'auto' }}>
+							<img
+								src={each.src}
+								className="Carouselnew"
+								alt={each.name}
+								style={{ margin: 'auto' }}
+							/>
+						</div>
+					</Carousel.Item>
+				);
+			})}
 		</Carousel>
 	);
 }

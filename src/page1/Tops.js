@@ -1,11 +1,21 @@
 import React from 'react';
 import Cover from '../images/CoverForManga.png';
 import '../App.css';
+import Popular from '../page3/Popular';
 function Tops() {
 	return (
 		<div>
-			<section className="mt-5 bg-gray">
-				<div className="container bg-light d-flex justify-content-center py-5">
+			<section className="mt-5 bg-white">
+				<Popular />
+			</section>
+		</div>
+	);
+}
+
+export default Tops;
+
+{
+	/* <div className="container bg-light d-flex justify-content-center py-5">
 					<div className="column">
 						<h1 className="h1-text mt-5">Top Comics and Manga</h1>
 						<div className="underline row pt-5 mt-5">
@@ -99,10 +109,5 @@ function Tops() {
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</div>
-	);
+				</div> */
 }
-
-export default Tops;

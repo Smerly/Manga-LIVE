@@ -8,7 +8,7 @@ function MindofReader() {
 			{/* <h1 className="h1-text my-4">The Experiences of the Readers</h1> */}
 			{/* </div> */}
 			{/* <div className="embed-responsive embed-responsive-16by9 mb-5"> */}
-			<div className="box-in-vid">
+			<div className="box-in-vid mt-5">
 				<h1
 					className="h1-text mt-5"
 					style={{
@@ -17,8 +17,12 @@ function MindofReader() {
 					}}
 				>
 					A new way of
+					<br />
+					enjoying web
+					<br />
+					novels
 				</h1>
-				<h1
+				{/* <h1
 					className="h1-text mt-1"
 					style={{
 						color: 'black',
@@ -35,7 +39,7 @@ function MindofReader() {
 					}}
 				>
 					novels
-				</h1>
+				</h1> */}
 
 				<button className="buttoncustom2">Learn more</button>
 			</div>
