@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import stockvid from '../images/stockvid.mp4';
+import stockvid2 from '../images/stockvid2.mp4';
 function MindofReader() {
 	return (
 		<section className="bg-black">
@@ -45,11 +46,8 @@ function MindofReader() {
 			</div>
 			{/* <div className="vid-overlay" /> */}
 			<video autoPlay loop muted className="videoxd">
-				<source src={stockvid} type="video/mp4" />
-				<source
-					src="https://media.istockphoto.com/id/1342503133/video/the-artist-draws-anime-comics-on-paper-storyboard-for-the-cartoon-the-illustrator-creates.mp4?s=mp4-640x640-is&k=20&c=P2kgi1QBAFjNWcdnWHGetovzM9DYRp4E09uUK3qprS0="
-					type="video/ogg"
-				/>
+				{/* <source src={stockvid2} type="video/mp4" /> */}
+				<source src={stockvid} type="video/ogg" />
 			</video>
 		</section>
 	);
