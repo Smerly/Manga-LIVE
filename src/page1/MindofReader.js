@@ -60,6 +60,7 @@ function MindofReader() {
 				controls={false}
 				muted={true}
 				playing={true}
+				playsinline={true}
 				width={'100vw'}
 				height={'auto'}
 				style={{ marginBottom: 30 }}
