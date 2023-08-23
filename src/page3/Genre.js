@@ -5,7 +5,7 @@ import MangaList from '../MangaList';
 
 function Genre() {
 	return (
-		<div className="container">
+		<div className="container">	
 			<div className="column pb-5 mb-5" style={{ minHeight: 800 }}>
 				<h1
 					className="top-header pt-5 mb-5"

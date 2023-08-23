@@ -2,14 +2,32 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styled';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import { NavLink, useHistory, } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import { auth } from './firebase/firebase';
 import mangaLiveLogo from './images/Manga-LIVE.png';
+import { useResize } from './helpers/useresize'
+
 function Navbar1() {
 	const [user, setUser] = useState({});
+	const [toggle, setToggle] = useState(false)
+	const [size, setSize] = useState([0, 0]);
+	useLayoutEffect(() => {
+		function updateSize() {
+			setSize([window.innerWidth, window.innerHeight]);
+		}
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, []);
+	
+	// const [counto, setCounto] = useState(0)
+	// let count = 0;
+	// const counter = useRef(0)
+	// let temp = 0
+
 	const history = useHistory();
 	const [showNav, setShowNav] = useState(false);
 
@@ -21,24 +39,29 @@ function Navbar1() {
 		setUser(currentUser);
 	});
 
+	useEffect(() => {
+		if (size[0] >= 1000) {
+			setToggle(false)
+		}
+	}, [size])
+
 	const hiddenNavbar = () => {
-		if (showNav) {
+		// if (showNav) {
 			return (
 				<div>
-					<div>
-						{/* <NavLink
-							to={`/`}
-							className="customlink1 font-weight-bold navbar-brand mr-5"
-						></NavLink> */}
+					<div className={toggle ? 'navbar-hidden-slide1 toggled' : 'navbar-hidden-slide1'}></div>
+					<div className={toggle ? 'navbar-hidden-slide2 toggled' : 'navbar-hidden-slide2'}></div>
+					<div className={toggle ? 'navbar-hidden toggled' : 'navbar-hidden'}>
+						
 						<NavLink
-							className="customlink font-weight-bold nav-link mx-3"
+							className="text-center customlink font-weight-bold nav-link mx-3"
 							whileHover={{ color: 'black' }}
 							to={`/create`}
 						>
 							Create
 						</NavLink>
 						<NavLink
-							className="customlink font-weight-bold nav-link mx-3"
+							className="text-center customlink font-weight-bold nav-link mx-3"
 							exact
 							to={`/explore`}
 						>
@@ -46,16 +69,40 @@ function Navbar1() {
 						</NavLink>
 						<NavLink
 							href="account.html"
-							className="customlink font-weight-bold nav-link mx-3"
+							className="text-center customlink font-weight-bold nav-link mx-3"
 							exact
 							to={`/Account`}
 						>
 							Account
 						</NavLink>
+
+						<div style={{backgroundColor: 'white', width: '10%', height: 2, margin: '2vh'}}></div>
+
+						{handleUser()}
+
+								{user ? (
+									<li
+										className="nav-item pl-3 pr-3"
+										style={{ alignSelf: 'center' }}
+									>
+										<button
+											onClick={() => {
+												logout();
+												history.push('/');
+											}}
+											className="buttoncustom font-weight-bold"
+										>
+											{' '}
+											Log out
+										</button>
+									</li>
+								) : (
+									''
+								)}
 					</div>
 				</div>
 			);
-		}
+		// }
 	};
 	const handleUser = () => {
 		if (!user) {
@@ -68,10 +115,10 @@ function Navbar1() {
 			</button>
 		</a> */}
 
-						<Login />
+						<Login /> 
 					</li>
 
-					<li className="nav-item pl-1 pr-5">
+					<li className="nav-item pl-3 pr-3">
 						{/* <a href="#" className="nav-link">
 			<button className="buttoncustom font-weight-bold">
 				Login
@@ -100,26 +147,41 @@ function Navbar1() {
 	};
 	// console.log(auth.currentUser);
 	return (
-		<div className="Navbar1">
+		<div className="navbar1">
 			<section style={{ backgroundColor: 'white' }}>
 				<nav
-					className="navbarcustom navbar navbar-expand-sm navbar-light"
+					className="navbarcustom navbar navbar-expand-lg navbar-light pr-5"
 					style={{ paddingTop: 15, paddingBottom: 15 }}
 				>
 					<NavLink to={`/`} className="font-weight-bold">
 						<img src={mangaLiveLogo} className="logo-link customlink1" />
 					</NavLink>
+					{/* <button onClick={() => {
+						// setCount(count + 1)
+						// console.log(count)
+						counter.current += 1
+						temp += 1
+						// count += 1
+					}}> {counter.current} </button> */}
+					{/* <button onClick={() => {
+						console.log(counter)
+						console.log(count)
+						console.log(counto)
+					}}> log </button>
 
+					<button onClick={() => {
+						setCounto(count + 1)
+					}}> useState update </button> */}
 					<button
 						className="navbar-toggler"
-						type="button"
-						data-toggle="collapse"
-						data-target="#collapsibleNavbar"
+						// type="button"
+						// data-toggle="collapse"
+						// data-target="#collapsibleNavbar"
 						onClick={() => {
-							setShowNav(!showNav);
+							// setShowNav(!showNav);
+							setToggle(!toggle)
 						}}
 					>
-						{hiddenNavbar()}
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div></div>
@@ -207,6 +269,7 @@ function Navbar1() {
 						</ul>
 					</div>
 				</nav>
+				{hiddenNavbar()}
 			</section>
 		</div>
 	);

@@ -59,7 +59,6 @@ const store = createStore(reducers, persistedState, applyMiddleware(thunk));
 store.subscribe(() => {
 	saveState(store.getState());
 });
-
 // App Component
 
 function App() {
