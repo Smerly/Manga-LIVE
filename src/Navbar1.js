@@ -22,11 +22,6 @@ function Navbar1() {
 		updateSize();
 		return () => window.removeEventListener('resize', updateSize);
 	}, []);
-	
-	// const [counto, setCounto] = useState(0)
-	// let count = 0;
-	// const counter = useRef(0)
-	// let temp = 0
 
 	const history = useHistory();
 	const [showNav, setShowNav] = useState(false);
@@ -49,9 +44,9 @@ function Navbar1() {
 		// if (showNav) {
 			return (
 				<div>
-					<div className={toggle ? 'navbar-hidden-slide1 toggled' : 'navbar-hidden-slide1'}></div>
-					<div className={toggle ? 'navbar-hidden-slide2 toggled' : 'navbar-hidden-slide2'}></div>
-					<div className={toggle ? 'navbar-hidden toggled' : 'navbar-hidden'}>
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden-slide1 toggled' : 'navbar-hidden-slide1'}></div>
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden-slide2 toggled' : 'navbar-hidden-slide2'}></div>
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden toggled' : 'navbar-hidden'}>
 						
 						<NavLink
 							className="text-center customlink font-weight-bold nav-link mx-3"
@@ -151,27 +146,11 @@ function Navbar1() {
 			<section style={{ backgroundColor: 'white' }}>
 				<nav
 					className="navbarcustom navbar navbar-expand-lg navbar-light pr-5"
-					style={{ paddingTop: 15, paddingBottom: 15 }}
+					style={{ paddingTop: 15, paddingBottom: 15, width: '100%' }}
 				>
 					<NavLink to={`/`} className="font-weight-bold">
 						<img src={mangaLiveLogo} className="logo-link customlink1" />
 					</NavLink>
-					{/* <button onClick={() => {
-						// setCount(count + 1)
-						// console.log(count)
-						counter.current += 1
-						temp += 1
-						// count += 1
-					}}> {counter.current} </button> */}
-					{/* <button onClick={() => {
-						console.log(counter)
-						console.log(count)
-						console.log(counto)
-					}}> log </button>
-
-					<button onClick={() => {
-						setCounto(count + 1)
-					}}> useState update </button> */}
 					<button
 						className="navbar-toggler"
 						// type="button"

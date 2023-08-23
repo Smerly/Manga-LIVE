@@ -8,52 +8,75 @@ import Login2 from './Login2';
 import Register2 from './Register2';
 import { auth } from './firebase/firebase';
 import mangaLiveLogo from './images/Manga-LIVE2.png';
+import { useResize } from './helpers/useresize'
 function Navbar2() {
 	const history = useHistory();
 	const [user, setUser] = useState({});
+	const [toggle, setToggle] = useState(false)
+	const [size, setSize] = useState([0, 0]);
 	const [showNav, setShowNav] = useState(false);
 
 	const logout = async () => {
 		await signOut(auth);
 	};
-
 	const hiddenNavbar = () => {
-		if (showNav) {
+		// if (showNav) {
 			return (
 				<div>
-					<div>
-						{/* <NavLink
-							to={`/`}
-							className="customlink1 font-weight-bold navbar-brand mr-5"
-						></NavLink> */}
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden-slide1 toggled' : 'navbar-hidden-slide1'}></div>
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden-slide2 toggled' : 'navbar-hidden-slide2'}></div>
+					<div style={{top: '5.5rem'}} className={toggle ? 'navbar-hidden toggled' : 'navbar-hidden'}>
+						
 						<NavLink
-							className="customlink2 font-weight-bold nav-link mx-3"
-							style={{ color: 'black' }}
+							className="text-center customlink font-weight-bold nav-link mx-3"
+							whileHover={{ color: 'black' }}
 							to={`/create`}
 						>
 							Create
 						</NavLink>
 						<NavLink
-							className="customlink2 font-weight-bold nav-link mx-3"
+							className="text-center customlink font-weight-bold nav-link mx-3"
 							exact
-							style={{ color: 'black' }}
 							to={`/explore`}
 						>
 							Explore
 						</NavLink>
 						<NavLink
 							href="account.html"
-							className="customlink2 font-weight-bold nav-link mx-3"
+							className="text-center customlink font-weight-bold nav-link mx-3"
 							exact
 							to={`/Account`}
-							style={{ color: 'black' }}
 						>
 							Account
 						</NavLink>
+
+						<div style={{backgroundColor: 'white', width: '10%', height: 2, margin: '2vh'}}></div>
+
+						{handleUser()}
+
+								{user ? (
+									<li
+										className="nav-item pl-3 pr-3"
+										style={{ alignSelf: 'center' }}
+									>
+										<button
+											onClick={() => {
+												logout();
+												history.push('/');
+											}}
+											className="buttoncustom font-weight-bold"
+										>
+											{' '}
+											Log out
+										</button>
+									</li>
+								) : (
+									''
+								)}
 					</div>
 				</div>
 			);
-		}
+		// }
 	};
 
 	onAuthStateChanged(auth, (currentUser) => {
@@ -103,24 +126,24 @@ function Navbar2() {
 	return (
 		<div className="Navbar2">
 			<section>
-				<nav className="navbarcustom2 navbar navbar-expand-sm navbar-light">
+				<nav className="navbarcustom2 navbar navbar-expand-lg navbar-light" style={{ paddingTop: 15, paddingBottom: 15, width: '100%', position: 'fixed' }}>
 					<NavLink to={`/`} className="font-weight-bold">
 						<img src={mangaLiveLogo} className="logo-link customlink1" />
 					</NavLink>
 
 					<button
 						className="navbar-toggler"
-						type="button"
-						data-toggle="collapse"
-						data-target="#collapsibleNavbar"
+						// type="button"
+						// data-toggle="collapse"
+						// data-target="#collapsibleNavbar"
 						onClick={() => {
-							setShowNav(!showNav);
+							setToggle(!toggle)
 						}}
 					>
 						{hiddenNavbar()}
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse" id="collapsibleNavbar">
+					<div className="collapse navbar-collapse ml-5" id="collapsibleNavbar">
 						<ul className="mr-auto navbar-nav">
 							<div className="row">
 								<li className="nav-item pl-2">
@@ -187,7 +210,7 @@ function Navbar2() {
 									''
 								)}
 
-								<div className="separation-line mt-3"></div>
+								{/* <div className="separation-line mt-3"></div> */}
 
 								{/* <li className="nav-item px-2 mr-4">
 									<form className="form-inline" action="/action_page.php">
@@ -202,6 +225,7 @@ function Navbar2() {
 						</ul>
 					</div>
 				</nav>
+				{hiddenNavbar()}
 			</section>
 		</div> // Dont touch this div or anything beyond here
 	);
