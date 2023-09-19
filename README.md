@@ -8,7 +8,7 @@ Posting feature is implemented with a database!
 
 ## Live Deployed on CapRover
 
-[Deployed Link](https://ernitar.me/Manga-LIVE/)
+[Deployed Link](https://www.manga-live.org/)
 
 ## FreshPing Monitoring
 
